@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import Intro from '../../components/Intro.astro';
+import Services from '../../components/Services.astro';
+import Archive from '../../components/Archive.astro';
+import Footer from '../../components/Footer.astro';
+import ThemeToggle from '../../components/ThemeToggle.astro';
+import LangSwitcher from '../../components/LangSwitcher.astro';
+import { getTranslations } from '../../utils/i18n';
+
+const locale = 'fr' as const;
+const t = getTranslations(locale);
+---
+<Layout
+  locale={locale}
+  title={t.meta.title}
+  description={t.meta.description}
+  translations={t}
+>
+  <main>
+    <Hero t={t.hero} />
+    <div class="container-custom">
+      <Intro t={t.intro} />
+      <Services t={t.services} />
+      <Archive t={t.archive} />
+    </div>
+    <Footer t={t.footer} />
+  </main>
+  <ThemeToggle t={t.ui} />
+  <LangSwitcher locale={locale} translations={t} />
+</Layout>

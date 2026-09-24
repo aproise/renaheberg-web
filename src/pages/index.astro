@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getTranslations } from '../utils/i18n';
+
+const t = getTranslations('fr');
+---
+<Layout
+  locale="fr"
+  title={t.meta.title}
+  description={t.meta.description}
+  translations={t}
+>
+  <script is:inline>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage || 'en';
+      var prefersFrench = lang.toLowerCase().startsWith('fr');
+      var target = prefersFrench ? '/fr' : '/en';
+      if (window.location.pathname === '/' || window.location.pathname === '') {
+        window.location.replace(target);
+      }
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/fr" />
+    <p>Redirection... <a href="/fr">Français</a> | <a href="/en">English</a></p>
+  </noscript>
+</Layout>

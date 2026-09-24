@@ -1,0 +1,15 @@
+---
+interface Props {
+  t: {
+    copyright: string;
+    author: string;
+  };
+}
+const { t } = Astro.props;
+---
+<footer>
+  <div class="container-custom footer__inner border-t border-[var(--line)]">
+    <span>{t.copyright}</span>
+    <span set:html={t.author.replace('{link}', '<a href="https://github.com/aproise" target="_blank" rel="noreferrer">Aproise</a>')} />
+  </div>
+</footer>

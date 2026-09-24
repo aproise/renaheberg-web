@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "eyebrow": "Ex-hébergement associatif",
+    "brand": "RENAHEBERG",
+    "rna": "W212012750",
+    "claim": "offrir des services web gratuits ou à très bas prix dans un but non lucratif permettant à de jeunes projets de pouvoir débuter facilement sans être bloqués financièrement.",
+    "scrollCta": "En savoirs plus",
+    "scrollAria": "Afficher le numéro RNA"
+  },
+  "intro": {
+    "title": "Un hébergement simple, accessible et humain.",
+    "text": "RenaHeberg était une association d'hébergement web à but non lucratif. Pendant près de deux ans, elle a aidé des projets à exister sans pression financière.",
+    "factsHeading": "Quelques repères",
+    "period": "2018–2020",
+    "facts": [
+      { "value": "30+", "label": "clients servis" },
+      { "value": "~30–60+", "label": "projets hébergés" },
+      { "value": "99%", "label": "disponibilité moyenne" },
+      { "value": "2 ans", "label": "durée d'activité" }
+    ],
+    "status": "Association dissoute\nRNA W212012750"
+  },
+  "services": {
+    "eyebrow": "Ce qui existait",
+    "title": "Des anciens services pour faire démarrer les projets.",
+    "items": [
+      { "icon": "server", "title": "Hébergement web", "text": "Hébergement partagé gratuit pour les projets associatifs et indépendants." },
+      { "icon": "database", "title": "Bases de données", "text": "Des bases accessibles pour faire fonctionner les sites hébergés." },
+      { "icon": "support", "title": "Support technique", "text": "Un accompagnement humain pour résoudre les problèmes." }
+    ]
+  },
+  "archive": {
+    "eyebrow": "Fin du projet",
+    "title": "Une archive, pas un service actif.",
+    "text": "RenaHeberg a cessé ses activités en octobre 2020.\nCette page conserve la mémoire du projet et de la communauté qu'elle a accompagnée."
+  },
+  "footer": {
+    "copyright": "2018–2020 © RenaHeberg",
+    "author": "Site codé avec amour par {link}"
+  },
+  "ui": { 
+    "theme": "Thème", 
+    "language": "Langue",
+    "themeLight": "Clair",
+    "themeDark": "Sombre",
+    "langSwitchToEn": "Switch to English",
+    "langSwitchToFr": "Passer en français"
+  },
+  "meta": {
+    "title": "RenaHeberg — Ex-hébergement associatif",
+    "description": "Découvrez l'ancienne mission ainsi que les éléments pour vous tenir à jour vis-à-vis de RenaHeberg, une ancienne association loi 1901 pour but d'aider."
+  }
+}

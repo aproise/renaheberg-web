@@ -1,0 +1,17 @@
+---
+interface Props {
+  t: {
+    eyebrow: string;
+    title: string;
+    text: string;
+  };
+}
+const { t } = Astro.props;
+---
+<section class="archive min-h-[52vh] grid place-items-center text-center py-28" id="archive">
+  <div>
+    <p class="eyebrow">{t.eyebrow}</p>
+    <h2 class="text-[clamp(2.2rem,5vw,4rem)] leading-[1.04] tracking-[-0.06em] mt-5">{t.title}</h2>
+    <p class="text-[var(--muted)]" set:html={t.text.replace(/\n/g, '<br>')} />
+  </div>
+</section>

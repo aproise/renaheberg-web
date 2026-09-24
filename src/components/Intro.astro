@@ -1,0 +1,34 @@
+---
+interface Props {
+  t: {
+    title: string;
+    text: string;
+    factsHeading: string;
+    period: string;
+    facts: { value: string; label: string }[];
+    status: string;
+  };
+}
+const { t } = Astro.props;
+---
+<section class="intro grid gap-18 lg:grid-cols-[1.1fr_0.9fr] items-center py-28 border-b border-[var(--line)]" id="page-content">
+  <div class="intro__copy">
+    <h2 class="text-[clamp(2.2rem,5vw,4rem)] leading-[1.04] tracking-[-0.06em]">{t.title}</h2>
+    <p class="text-[var(--muted)]">{t.text}</p>
+  </div>
+  <div class="facts">
+    <div class="facts__heading">
+      <strong>{t.factsHeading}</strong>
+      <span>{t.period}</span>
+    </div>
+    <div class="facts__grid">
+      {t.facts.map((fact) => (
+        <div>
+          <b>{fact.value}</b>
+          <span>{fact.label}</span>
+        </div>
+      ))}
+    </div>
+    <p class="facts__status" set:html={t.status.replace(/\n/g, '<br>')} />
+  </div>
+</section>

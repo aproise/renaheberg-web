@@ -1,0 +1,93 @@
+---
+import { getAlternateUrls } from '../utils/i18n';
+import '../styles/global.css';
+
+interface Props {
+  locale: 'fr' | 'en';
+  title: string;
+  description: string;
+  translations: {
+    hero: { eyebrow: string; brand: string; rna: string; claim: string; scrollCta: string; scrollAria: string };
+    intro: { title: string; text: string; factsHeading: string; period: string; facts: { value: string; label: string }[]; status: string };
+    services: { eyebrow: string; title: string; items: { icon: string; title: string; text: string }[] };
+    archive: { eyebrow: string; title: string; text: string };
+    footer: { copyright: string; author: string };
+    ui: { theme: string; language: string; themeSystem: string; themeLight: string; themeDark: string };
+    meta: { title: string; description: string };
+  };
+}
+const { locale, title, description, translations } = Astro.props;
+const canonicalURL = `https://renaheberg.fr/${locale}/`;
+const CF_ANALYTICS_TOKEN = import.meta.env.CF_ANALYTICS_TOKEN;
+---
+<!DOCTYPE html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+    {getAlternateUrls('/').map((alt) => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))}
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://renaheberg.fr/images/seo.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://renaheberg.fr/images/seo.png" />
+
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.bunny.net/css2?family=Inter:wght@400;700;800&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.bunny.net/css2?family=Inter:wght@400;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="RenaHeberg" />
+
+    {CF_ANALYTICS_TOKEN && (
+      <script
+        defer
+        data-cf-beacon={`{"token": "${CF_ANALYTICS_TOKEN}"}`}
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+      />
+    )}
+
+    <script is:inline>
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = theme ? theme === 'dark' : prefersDark;
+          if (isDark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>

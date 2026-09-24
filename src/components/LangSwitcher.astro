@@ -1,0 +1,31 @@
+---
+const { locale, translations } = Astro.props;
+const otherLocale = locale === 'fr' ? 'en' : 'fr';
+const otherLabel = locale === 'fr' ? 'EN' : 'FR';
+const ariaLabel = locale === 'fr' ? translations.ui.langSwitchToEn : translations.ui.langSwitchToFr;
+---
+<button
+  id="lang-toggle"
+  class="fixed bottom-16 right-4 z-50 btn-icon rounded-lg bg-[var(--paper)] border border-[var(--line)] text-[var(--ink)] font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--ink)] dark:focus:ring-[var(--ink-dark)] shadow-md hover:shadow-lg active:scale-[0.95]"
+  aria-label={ariaLabel}
+  title={ariaLabel}
+  data-lang={otherLocale}
+>
+  {otherLabel}
+</button>
+
+<script is:inline>
+  (function() {
+    var btn = document.getElementById('lang-toggle');
+    var targetLang = btn.dataset.lang;
+    
+    btn.addEventListener('click', function() {
+      btn.classList.add('ring-2', 'ring-[var(--ink)]');
+      setTimeout(function() {
+        btn.classList.remove('ring-2', 'ring-[var(--ink)]');
+      }, 150);
+      localStorage.setItem('locale', targetLang);
+      window.location.href = '/' + targetLang;
+    });
+  })();
+</script>

@@ -1,0 +1,106 @@
+---
+interface Props {
+  t: {
+    title: string;
+    content: string;
+    close: string;
+  };
+}
+const { t } = Astro.props;
+---
+<dialog id="info-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="fixed inset-0 bg-black/50 backdrop-blur-sm" aria-hidden="true"></div>
+  <div class="relative z-10 w-full max-w-md mx-auto my-20 p-6 bg-[var(--bg)] rounded-xl shadow-xl border animate-in fade-in zoom-in-95 duration-200">
+    <header class="flex items-start justify-between mb-4">
+      <h2 id="modal-title" class="text-2xl font-medium">{t.title}</h2>
+      <button
+        id="modal-close"
+        class="p-1 rounded-lg hover:bg-[var(--muted)] transition-colors focus:outline-none focus:ring-2 focus:ring-accent"
+        aria-label={t.close}
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </header>
+    <div class="prose prose-sm dark:prose-invert max-h-[60vh] overflow-y-auto">
+      <p class="whitespace-pre-line">{t.content}</p>
+    </div>
+    <footer class="mt-6 text-right">
+      <button
+        id="modal-close-btn"
+        class="btn-primary"
+        aria-label={t.close}
+      >
+        {t.close}
+      </button>
+    </footer>
+  </div>
+</dialog>
+
+<script is:inline>
+  (function() {
+    var modal = document.getElementById('info-modal');
+    var openBtn = document.getElementById('info-btn');
+    var closeBtn = document.getElementById('modal-close');
+    var closeBtn2 = document.getElementById('modal-close-btn');
+
+    var lastFocusedElement = null;
+
+    function openModal() {
+      lastFocusedElement = document.activeElement;
+      modal.showModal();
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+      trapFocus(modal);
+    }
+
+    function closeModal() {
+      modal.close();
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+      if (lastFocusedElement) lastFocusedElement.focus();
+    }
+
+    function trapFocus(element) {
+      var focusableElements = element.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      var firstElement = focusableElements[0];
+      var lastElement = focusableElements[focusableElements.length - 1];
+
+      element.addEventListener('keydown', function handleTab(e) {
+        if (e.key !== 'Tab') return;
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      });
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    closeBtn2.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.open) closeModal();
+    });
+
+    document.addEventListener('astro:before-swap', function() {
+      if (modal.open) closeModal();
+    });
+  })();
+</script>
