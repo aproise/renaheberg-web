@@ -17,7 +17,8 @@ interface Props {
   };
 }
 const { locale, title, description, translations } = Astro.props;
-const canonicalURL = `https://renaheberg.fr/${locale}/`;
+const canonicalURL = `${Astro.site}${locale}/`;
+const seoImage = `${Astro.site}images/seo/${locale}.png`;
 const CF_ANALYTICS_TOKEN = import.meta.env.CF_ANALYTICS_TOKEN;
 ---
 <!DOCTYPE html>
@@ -27,7 +28,7 @@ const CF_ANALYTICS_TOKEN = import.meta.env.CF_ANALYTICS_TOKEN;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalURL} />
-    {getAlternateUrls('/').map((alt) => (
+    {getAlternateUrls('/', Astro.site).map((alt) => (
       <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
     ))}
 
@@ -39,13 +40,14 @@ const CF_ANALYTICS_TOKEN = import.meta.env.CF_ANALYTICS_TOKEN;
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://renaheberg.fr/images/seo.png" />
+    <meta property="og:image" content={seoImage} />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="https://renaheberg.fr/images/seo.png" />
+    <meta property="twitter:image" content={seoImage} />
+    <meta name="robots" content="index, follow" />
 
     <link rel="preconnect" href="https://fonts.bunny.net" />
     <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />

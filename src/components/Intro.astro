@@ -7,9 +7,17 @@ interface Props {
     period: string;
     facts: { value: string; label: string }[];
     status: string;
+    hero?: { rna: string };
   };
 }
 const { t } = Astro.props;
+const rnaNumber = t.hero?.rna || 'W212012750';
+const rnaUrl = `https://assoce.fr/waldec/${rnaNumber}/RENAHEBERG`;
+// Replace "RNA W212012750" in status with a link
+const statusHtml = t.status.replace(/\n/g, '<br>').replace(
+  `RNA ${rnaNumber}`,
+  `<a href="${rnaUrl}" target="_blank" rel="noreferrer">RNA ${rnaNumber}</a>`
+);
 ---
 <section class="intro grid gap-18 lg:grid-cols-[1.1fr_0.9fr] items-center py-28 border-b border-[var(--line)]" id="page-content">
   <div class="intro__copy">
@@ -29,6 +37,6 @@ const { t } = Astro.props;
         </div>
       ))}
     </div>
-    <p class="facts__status" set:html={t.status.replace(/\n/g, '<br>')} />
+    <p class="facts__status" set:html={statusHtml} />
   </div>
 </section>

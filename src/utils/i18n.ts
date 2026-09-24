@@ -15,10 +15,11 @@ export function detectLocale(acceptLanguage: string): Locale {
   return primary.startsWith('fr') ? 'fr' : 'en';
 }
 
-export function getAlternateUrls(pathname: string): { hreflang: string; href: string }[] {
+export function getAlternateUrls(pathname: string, site: string | URL): { hreflang: string; href: string }[] {
+  const base = String(site).replace(/\/$/, '');
   return [
-    { hreflang: 'fr', href: `https://renaheberg.fr/fr${pathname}` },
-    { hreflang: 'en', href: `https://renaheberg.fr/en${pathname}` },
-    { hreflang: 'x-default', href: 'https://renaheberg.fr/' },
+    { hreflang: 'fr', href: `${base}/fr${pathname}` },
+    { hreflang: 'en', href: `${base}/en${pathname}` },
+    { hreflang: 'x-default', href: `${base}/` },
   ];
 }

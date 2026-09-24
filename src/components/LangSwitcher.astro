@@ -14,18 +14,6 @@ const ariaLabel = locale === 'fr' ? translations.ui.langSwitchToEn : translation
   {otherLabel}
 </button>
 
-<script is:inline>
-  (function() {
-    var btn = document.getElementById('lang-toggle');
-    var targetLang = btn.dataset.lang;
-    
-    btn.addEventListener('click', function() {
-      btn.classList.add('ring-2', 'ring-[var(--ink)]');
-      setTimeout(function() {
-        btn.classList.remove('ring-2', 'ring-[var(--ink)]');
-      }, 150);
-      localStorage.setItem('locale', targetLang);
-      window.location.href = '/' + targetLang;
-    });
-  })();
+<script type="module">
+  import '../scripts/lang-switcher.js';
 </script>

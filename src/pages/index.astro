@@ -10,15 +10,8 @@ const t = getTranslations('fr');
   description={t.meta.description}
   translations={t}
 >
-  <script is:inline>
-    (function() {
-      var lang = navigator.language || navigator.userLanguage || 'en';
-      var prefersFrench = lang.toLowerCase().startsWith('fr');
-      var target = prefersFrench ? '/fr' : '/en';
-      if (window.location.pathname === '/' || window.location.pathname === '') {
-        window.location.replace(target);
-      }
-    })();
+  <script type="module">
+    import '../scripts/locale-redirect.js';
   </script>
   <noscript>
     <meta http-equiv="refresh" content="0;url=/fr" />
