@@ -111,7 +111,7 @@ astro dev stop     # Stop server
 
 ### Setup
 ```bash
-git clone https://github.com/your-org/renaheberg-web.git
+git clone https://github.com/aproise/renaheberg-web.git
 cd renaheberg-web
 npm install
 npm run dev
