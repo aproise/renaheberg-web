@@ -19,7 +19,6 @@ interface Props {
 const { locale, title, description, translations } = Astro.props;
 const canonicalURL = `${Astro.site}${locale}/`;
 const seoImage = `${Astro.site}images/seo/${locale}.png`;
-const CF_ANALYTICS_TOKEN = import.meta.env.CF_ANALYTICS_TOKEN;
 ---
 <!DOCTYPE html>
 <html lang={locale}>
@@ -69,14 +68,6 @@ const CF_ANALYTICS_TOKEN = import.meta.env.CF_ANALYTICS_TOKEN;
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
     <meta name="apple-mobile-web-app-title" content="RenaHeberg" />
-
-    {CF_ANALYTICS_TOKEN && (
-      <script
-        defer
-        data-cf-beacon={`{"token": "${CF_ANALYTICS_TOKEN}"}`}
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-      />
-    )}
 
     <script is:inline>
       (function() {

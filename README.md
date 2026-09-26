@@ -111,7 +111,7 @@ astro dev stop     # Stop server
 
 ### Setup
 ```bash
-git clone https://github.com/aproise/renaheberg-web.git
+git clone https://git.renaheberg.fr
 cd renaheberg-web
 npm install
 npm run dev
@@ -141,15 +141,20 @@ npm run build
 ### Environment Variables
 Create `.env` from `.env.example`:
 ```env
-CF_ANALYTICS_TOKEN=your_cloudflare_web_analytics_token
+PUBLIC_SITE_URL=https://renaheberg.fr
 ```
+
+> **Analytics**: Cloudflare Web Analytics is managed automatically at the Cloudflare dashboard level.
+> Enable it in **Cloudflare Dashboard → Web Analytics → Add Site**.
+> Choose **"Automatic"** (all visitors) or **"Automatic, excluding EU visitors"** (GDPR-friendly, no consent banner needed).
+> No code changes or environment variables required.
 
 ---
 
 ## 🔗 Links
 
 - **Live Site**: [https://renaheberg.fr](https://renaheberg.fr)
-- **Repository**: [GitHub](https://github.com/aproise/renaheberg-web)
+- **Repository**: [Git](https://git.renaheberg.fr)
 
 ---
 
