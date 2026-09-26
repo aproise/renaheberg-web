@@ -40,6 +40,7 @@ This website is a **static archive** preserving the memory of the project and it
 | ♿ **Accessible** | Semantic HTML, ARIA labels, keyboard navigation, color contrast |
 | 🔍 **SEO Optimized** | Open Graph, Twitter Cards, canonical URLs, hreflang, sitemap |
 | ⚡ **Performance** | Static HTML output, minimal JS, font preloading, optimized images |
+| 🛡️ **Multi-domain Handling** | Edge middleware: canonical domain (index), allowed hosts (noindex), others redirect |
 | 🎨 **Modern Stack** | Astro 7 (islands architecture), TailwindCSS 4, TypeScript |
 
 ---
@@ -50,15 +51,23 @@ This website is a **static archive** preserving the memory of the project and it
 /
 ├── public/
 │   ├── favicon/           # Favicons & manifest (SVG, PNG, ICO, webmanifest)
-│   └── images/
-│       └── seo.png        # Open Graph / Twitter Card image
+│   ├── images/
+│   │   ├── seo/
+│   │   │   ├── fr.png     # Open Graph / Twitter Card image (French)
+│   │   │   └── en.png     # Open Graph / Twitter Card image (English)
+│   │   └── seo.png        # Fallback Open Graph / Twitter Card image
+│   └── scripts/           # External JS modules (cached by browser)
+│       ├── hero-scroll.js     # Smooth scroll CTA
+│       ├── theme-toggle.js    # Dark/light theme toggle
+│       ├── lang-switcher.js   # FR/EN language switch
+│       └── locale-redirect.js # Root page browser language redirect
 ├── src/
 │   ├── components/        # Astro components (Hero, Intro, Services, Archive, Footer, etc.)
 │   ├── content/
 │   │   ├── fr.json        # French translations
 │   │   └── en.json        # English translations
 │   ├── layouts/
-│   │   └── Layout.astro   # Root layout with meta, fonts, analytics
+│   │   └── Layout.astro   # Root layout with meta, fonts
 │   ├── pages/
 │   │   ├── fr/            # French routes (index.astro)
 │   │   └── en/            # English routes (index.astro)
@@ -68,7 +77,9 @@ This website is a **static archive** preserving the memory of the project and it
 │   │   └── global.css     # Tailwind + custom CSS variables
 │   └── utils/
 │       └── i18n.ts        # i18n helpers (translations, alternate URLs)
-├── astro.config.mjs       # Astro configuration (i18n, integrations)
+├── functions/
+│   └── _middleware.ts     # Cloudflare Pages edge middleware (domain handling)
+├── astro.config.mjs       # Astro configuration (i18n, env schema)
 ├── package.json
 ├── tsconfig.json
 └── README.md
@@ -141,13 +152,41 @@ npm run build
 ### Environment Variables
 Create `.env` from `.env.example`:
 ```env
+# Site URL (for canonical URLs) - ONLY this domain gets index,follow
 PUBLIC_SITE_URL=https://renaheberg.fr
+
+# Additional hosts that serve content without redirect (comma-separated)
+# These get noindex,nofollow + canonical removed (same as *.pages.dev)
+# Example: ALLOWED_HOSTS=no-rum.renaheberg.fr
+ALLOWED_HOSTS=
 ```
 
 > **Analytics**: Cloudflare Web Analytics is managed automatically at the Cloudflare dashboard level.
 > Enable it in **Cloudflare Dashboard → Web Analytics → Add Site**.
 > Choose **"Automatic"** (all visitors) or **"Automatic, excluding EU visitors"** (GDPR-friendly, no consent banner needed).
 > No code changes or environment variables required.
+
+---
+
+## 🛡️ Edge Middleware (Cloudflare Pages Functions)
+
+The project uses a Cloudflare Pages Function (`functions/_middleware.ts`) to handle multi-domain SEO strategy at the edge:
+
+| Hostname Pattern | HTTP Status | Canonical Link | Meta Robots | X-Robots-Tag | Use Case |
+|------------------|-------------|----------------|-------------|--------------|----------|
+| `PUBLIC_SITE_URL` (e.g., `renaheberg.fr`) | 200 | ✅ Self | `index, follow` | — | Primary domain, full SEO |
+| `ALLOWED_HOSTS` (e.g., `no-rum.renaheberg.fr`) | 200 | ❌ Removed | `noindex, nofollow` | `noindex, nofollow` | Internal tools, no index |
+| `www.*` of canonical | 301 | → canonical | — | — | Redirect to canonical |
+| `*.pages.dev` | 200 | ❌ Removed | `noindex, nofollow` | `noindex, nofollow` | Preview deployments |
+| Any other domain | 301 | → canonical | — | — | Clone protection |
+
+**Configuration** (via Cloudflare Pages env vars):
+```env
+PUBLIC_SITE_URL=https://renaheberg.fr
+ALLOWED_HOSTS=no-rum.renaheberg.fr,staging.example.com
+```
+
+This runs at the edge before static assets are served — zero client-side JS, zero build-time complexity.
 
 ---
 
