@@ -1,0 +1,192 @@
+---
+interface Props {
+  locale: 'fr' | 'en';
+}
+const { locale } = Astro.props;
+const t = await import(`../content/${locale}.json`);
+const cookie = t.default.cookie;
+---
+<div id="cookie-banner" class="fixed bottom-6 left-6 z-50 hidden" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
+  <div class="bg-[var(--paper)] border border-[var(--line)] rounded-xl shadow-2xl max-w-md w-full overflow-hidden" role="document">
+    <div class="p-5 md:p-6">
+      <div class="flex items-start justify-between gap-4 mb-4">
+        <div class="flex-1">
+          <h2 id="cookie-title" class="font-semibold text-[var(--ink)] text-base mb-2">{cookie.banner.text}</h2>
+          <p id="cookie-desc" class="text-sm text-[var(--muted)]">
+            <a href={`/${locale}/legals/privacy`} class="underline hover:no-underline">{cookie.links.privacy}</a>
+            {' · '}
+            <a href={`/${locale}/legals/cookies`} class="underline hover:no-underline">{cookie.links.cookies}</a>
+          </p>
+        </div>
+        <button
+          id="cookie-close"
+          type="button"
+          class="flex-shrink-0 p-1 rounded-lg hover:bg-[var(--muted)]/10 transition-colors text-[var(--muted)] hover:text-[var(--ink)]"
+          aria-label="Fermer"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+<div class="flex flex-col sm:flex-row gap-3 w-full">
+        <button
+          id="cookie-accept"
+          type="button"
+          class="btn-primary flex-1 text-sm px-5 py-2.5 cursor-pointer hover:opacity-90 hover:scale-[1.02] hover:shadow-lg transition-all duration-200"
+          aria-label={cookie.banner.accept}
+        >
+          {cookie.banner.accept}
+        </button>
+        <button
+          id="cookie-refuse"
+          type="button"
+          class="btn-ghost flex-1 text-sm px-5 py-2.5 cursor-pointer hover:bg-[var(--muted)]/50 text-[var(--muted)] hover:text-[var(--ink)] transition-colors duration-200"
+          aria-label={cookie.banner.refuse}
+        >
+          {cookie.banner.refuse}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Backdrop as sibling (not child) with pointer-events-none so it never blocks clicks -->
+<div id="cookie-backdrop" class="fixed inset-0 bg-black/30 hidden z-40 pointer-events-none" aria-hidden="true"></div>
+
+<script>
+  (function() {
+    const locale = '{locale}';
+    const banner = document.getElementById('cookie-banner');
+    const backdrop = document.getElementById('cookie-backdrop');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const refuseBtn = document.getElementById('cookie-refuse');
+    const closeBtn = document.getElementById('cookie-close');
+
+    if (!banner || !acceptBtn || !refuseBtn || !backdrop || !closeBtn) return;
+
+    const COOKIE_NAME = 'cookie_consent';
+    const hostname = window.location.hostname;
+    const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1' || hostname.startsWith('192.168.') || hostname.startsWith('10.');
+    const COOKIE_DOMAIN = isLocalhost ? 'localhost' : '.renaheberg.fr';
+    const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
+    const isSecure = location.protocol === 'https:';
+
+    const isMainDomain = hostname === 'renaheberg.fr' || isLocalhost;
+    const isMirrorDomain = hostname === 'renaheberg.ape.pm';
+
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    function setCookie(name, value, maxAge) {
+      const secureFlag = isSecure ? '; Secure' : '';
+      document.cookie = `${name}=${value}; max-age=${maxAge}; path=/; domain=${COOKIE_DOMAIN}; SameSite=Lax${secureFlag}`;
+    }
+
+    function hideBanner() {
+      banner.classList.add('hidden');
+      backdrop.classList.add('hidden');
+      banner.setAttribute('aria-hidden', 'true');
+      backdrop.setAttribute('aria-hidden', 'true');
+    }
+
+    function showBanner() {
+      banner.classList.remove('hidden');
+      backdrop.classList.remove('hidden');
+      banner.removeAttribute('aria-hidden');
+      backdrop.removeAttribute('aria-hidden');
+      setTimeout(() => refuseBtn?.focus(), 100);
+    }
+
+    function redirectToMirror() {
+      const url = new URL('https://renaheberg.ape.pm');
+      url.pathname = window.location.pathname;
+      url.search = window.location.search;
+      window.location.href = url.toString();
+    }
+
+    function redirectToMain() {
+      const url = new URL('https://renaheberg.fr');
+      url.pathname = window.location.pathname;
+      url.search = window.location.search;
+      window.location.href = url.toString();
+    }
+
+    const consent = getCookie(COOKIE_NAME);
+
+    if (consent) {
+      hideBanner();
+      if (isMirrorDomain && consent === 'accept') {
+        redirectToMain();
+      }
+      return;
+    }
+
+    showBanner();
+
+    function handleAccept() {
+      setCookie('cookie_consent', 'accept', 60 * 60 * 24 * 365);
+      hideBanner();
+      if (isMirrorDomain) redirectToMain();
+    }
+
+    function handleRefuse() {
+      setCookie('cookie_consent', 'refuse', 60 * 60 * 24 * 365);
+      hideBanner();
+      if (isMainDomain) redirectToMirror();
+    }
+
+    function handleClose() {
+      handleRefuse();
+    }
+
+    acceptBtn.addEventListener('click', handleAccept);
+    refuseBtn.addEventListener('click', handleRefuse);
+    closeBtn.addEventListener('click', handleClose);
+    // Backdrop click does NOT close - pointer-events-none prevents interception
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !banner.classList.contains('hidden')) {
+        handleClose();
+      }
+    });
+
+    // Focus trap within modal
+    banner.addEventListener('keydown', function(e) {
+      if (e.key !== 'Tab') return;
+      const focusableElements = banner.querySelectorAll('button, a');
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    });
+  })();
+</script>
+
+<style>
+  #cookie-banner {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>

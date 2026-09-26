@@ -49,5 +49,27 @@
   "meta": {
     "title": "RenaHeberg — Ex-hébergement associatif",
     "description": "Découvrez l'ancienne mission ainsi que les éléments pour vous tenir à jour vis-à-vis de RenaHeberg, une ancienne association loi 1901 pour but d'aider."
+  },
+  "cookie": {
+    "banner": {
+      "text": "Ce site utilise Cloudflare Web Analytics pour mesurer l'audience. Les données sont traitées par Cloudflare (CFA), non par nous.",
+      "accept": "Accepter",
+      "refuse": "Refuser",
+      "learnMore": "En savoir plus"
+    },
+    "links": {
+      "privacy": "Politique de confidentialité",
+      "cookies": "Politique des cookies"
+    },
+    "mirrorBanner": {
+      "text": "⚠️ Vous êtes sur un miroir de renaheberg.fr sans cookies Cloudflare.",
+      "button": "Retourner sur le site principal en acceptant les cookies"
+    }
+  },
+  "error404": {
+    "title": "Page non trouvée",
+    "subtitle": "Cette page n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil",
+    "backHomeAria": "Revenir à la page d'accueil"
   }
 }

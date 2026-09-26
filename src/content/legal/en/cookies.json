@@ -1,0 +1,54 @@
+{
+  "title": "Cookie Policy",
+  "lastUpdated": "2026-09-26",
+  "intro": {
+    "title": "What is a cookie?",
+    "text": "A cookie is a small text file stored on your device (computer, smartphone, tablet) when you visit a website. It allows the site to recognize your browser on subsequent visits."
+  },
+  "categories": {
+    "title": "Categories of cookies used",
+    "items": [
+      {
+        "name": "Necessary (strictly necessary)",
+        "description": "Essential for site functionality (language, theme, consent).",
+        "consent": "No consent required (Art. 6.1.b GDPR)",
+        "cookies": [
+          { "name": "cookie_consent", "purpose": "Remembers your choice (accept/refuse)", "duration": "13 months", "domain": ".renaheberg.fr" }
+        ]
+      },
+      {
+        "name": "Analytics (Cloudflare Web Analytics)",
+        "description": "Anonymous audience measurement to improve the site.",
+        "consent": "Consent required (Art. 6.1.a GDPR)",
+        "cookies": [
+          { "name": "__cf_bm", "purpose": "Bot traffic management (Cloudflare)", "duration": "30 min", "domain": ".cloudflare.com" },
+          { "name": "cf_clearance", "purpose": "Cloudflare challenge validation", "duration": "1 year", "domain": ".cloudflare.com" }
+        ],
+        "note": "These cookies are managed by Cloudflare. IP is anonymized. No personal data is collected."
+      }
+    ]
+  },
+  "consent": {
+    "title": "Consent management",
+    "text": "On your first visit, a banner asks you to accept or refuse analytics cookies. Your choice is stored for 13 months via the <code>cookie_consent</code> cookie."
+  },
+  "withdraw": {
+    "title": "Withdrawing consent",
+    "text": "You can change your mind at any time by clicking \"Manage cookies\" in the footer, or by deleting the <code>cookie_consent</code> cookie from your browser."
+  },
+  "refuseConsequence": {
+    "title": "Consequences of refusal",
+    "text": "If you refuse analytics cookies: you will be redirected to our mirror <strong>renaheberg.ape.pm</strong> (same content, no Cloudflare analytics). You can accept cookies there to return to the main site."
+  },
+  "browserSettings": {
+    "title": "Browser settings",
+    "text": "You can also configure your browser to block/delete cookies:",
+    "links": [
+      { "name": "Chrome", "url": "https://support.google.com/chrome/answer/95647" },
+      { "name": "Firefox", "url": "https://support.mozilla.org/en-US/kb/cookies" },
+      { "name": "Safari", "url": "https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" },
+      { "name": "Edge", "url": "https://support.microsoft.com/en-us/edge" }
+    ]
+  },
+  "disclaimer": "Analytics data is processed by Cloudflare (CFA) as a processor, not by the publisher of this site."
+}

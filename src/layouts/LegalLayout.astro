@@ -1,7 +1,5 @@
 ---
 import { getAlternateUrls } from '../utils/i18n';
-import CookieConsent from '../components/CookieConsent.astro';
-import MirrorBanner from '../components/MirrorBanner.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -9,23 +7,12 @@ interface Props {
   title: string;
   description: string;
   translations: {
-    hero: { eyebrow: string; brand: string; rna: string; claim: string; scrollCta: string; scrollAria: string };
-    intro: { title: string; text: string; factsHeading: string; period: string; facts: { value: string; label: string }[]; status: string };
-    services: { eyebrow: string; title: string; items: { icon: string; title: string; text: string }[] };
-    archive: { eyebrow: string; title: string; text: string };
-    footer: { copyright: string; author: string };
     ui: { theme: string; language: string; themeSystem: string; themeLight: string; themeDark: string };
     meta: { title: string; description: string };
-    cookie: {
-      banner: { text: string; accept: string; refuse: string; learnMore: string };
-      links: { privacy: string; cookies: string };
-      mirrorBanner: { text: string; button: string };
-    };
   };
 }
 const { locale, title, description, translations } = Astro.props;
 const canonicalURL = `${Astro.site}${locale}/`;
-const seoImage = `${Astro.site}images/seo/${locale}.png`;
 ---
 <!DOCTYPE html>
 <html lang={locale}>
@@ -34,7 +21,7 @@ const seoImage = `${Astro.site}images/seo/${locale}.png`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalURL} />
-    {getAlternateUrls('/', Astro.site).map((alt) => (
+    {getAlternateUrls('/').map((alt) => (
       <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
     ))}
 
@@ -46,14 +33,13 @@ const seoImage = `${Astro.site}images/seo/${locale}.png`;
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={seoImage} />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={seoImage} />
-    <meta name="robots" content="index, follow" />
+
+    <meta name="robots" content="noindex, follow" />
 
     <link rel="preconnect" href="https://fonts.bunny.net" />
     <link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
@@ -88,8 +74,6 @@ const seoImage = `${Astro.site}images/seo/${locale}.png`;
     </script>
   </head>
   <body class="min-h-screen flex flex-col">
-    <MirrorBanner locale={locale} translations={translations} />
     <slot />
-    <CookieConsent locale={locale} translations={translations} />
   </body>
 </html>

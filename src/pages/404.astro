@@ -1,0 +1,25 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>404 - Page Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0;url=/fr/not-found" />
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage || 'fr';
+      var target = lang.toLowerCase().startsWith('fr') ? '/fr/not-found' : '/en/not-found';
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body style="font-family: system-ui, sans-serif; text-align: center; padding: 3rem;">
+  <h1>404 - Page Not Found</h1>
+  <p>Redirecting to appropriate language...</p>
+  <p>
+    <a href="/fr/not-found">Français</a> | <a href="/en/not-found">English</a>
+  </p>
+</body>
+</html>

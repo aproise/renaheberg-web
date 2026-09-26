@@ -1,0 +1,46 @@
+{
+  "title": "Legal Notice",
+  "lastUpdated": "2026-09-26",
+  "publisher": {
+    "title": "Site Publisher",
+    "items": [
+      "Former RenaHeberg association (dissolved October 2020)",
+      "RNA: W212012750",
+      "Former non-profit web hosting association (2018-2020)",
+      "Archive site only — service not active"
+    ]
+  },
+  "director": {
+    "title": "Publication Director",
+    "text": "Aproise (archive site developer)"
+  },
+  "hosting": {
+    "title": "Hosting",
+    "items": [
+      "Cloudflare Pages (Cloudflare Inc.)",
+      "101 Townsend St, San Francisco, CA 94107, USA",
+      "Mirror site: renaheberg.ape.pm (separate hosting)"
+    ]
+  },
+  "processor": {
+    "title": "Processor (Art. 28 GDPR)",
+    "text": "Cloudflare Inc. acts as processor for hosting, distribution (CDN), and analytics (Cloudflare Web Analytics). A Data Processing Agreement (DPA) is in place."
+  },
+  "ip": {
+    "title": "Intellectual Property",
+    "text": "This archive site content is provided for historical and educational purposes. Source code: <a href=\"https://git.renaheberg.fr\" target=\"_blank\" rel=\"noreferrer\">git.renaheberg.fr</a>."
+  },
+  "liability": {
+    "title": "Liability",
+    "text": "This site is a historical archive. Information is provided \"as is\", without warranty of accuracy, completeness, or timeliness. The publisher cannot be held liable for direct or indirect damages resulting from use of this site."
+  },
+  "law": {
+    "title": "Applicable Law and Jurisdiction",
+    "text": "This site is governed by French law. Any disputes fall under the jurisdiction of French courts."
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "For any questions about this archive site: <a href=\"https://git.renaheberg.fr\" target=\"_blank\" rel=\"noreferrer\">git.renaheberg.fr</a>"
+  },
+  "disclaimer": "Analytics data is processed by Cloudflare (CFA) as a processor, not by the publisher of this site."
+}

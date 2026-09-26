@@ -1,0 +1,62 @@
+{
+  "title": "Privacy Policy",
+  "lastUpdated": "2026-09-26",
+  "controller": {
+    "title": "Data Controller",
+    "text": "This archive site is managed by Aproise (developer), acting as the data controller for personal data collected on this site. The former RenaHeberg association (RNA W212012750) was dissolved in October 2020."
+  },
+  "dpo": {
+    "title": "Data Protection Officer (DPO)",
+    "text": "You can contact our Data Protection Officer via Cloudflare: <a href=\"https://www.cloudflare.com/cdn-cgi/l/email-protection#dpo\" target=\"_blank\" rel=\"noreferrer\">dpo@cloudflare.com</a>"
+  },
+  "purposes": {
+    "title": "Purposes and Legal Bases",
+    "items": [
+      { "purpose": "Audience measurement and analytics", "basis": "Consent (Art. 6.1.a GDPR)", "details": "Via Cloudflare Web Analytics to understand site usage" },
+      { "purpose": "Cookie consent management", "basis": "Legal obligation (Art. 6.1.c GDPR)", "details": "Recording your consent choices" }
+    ]
+  },
+  "dataCategories": {
+    "title": "Categories of Data Collected",
+    "items": [
+      "IP address (anonymized by Cloudflare)",
+      "Navigation data (pages viewed, duration, referrer)",
+      "Language and theme preferences",
+      "Consent choices (accept/refuse, timestamp)"
+    ]
+  },
+  "recipients": {
+    "title": "Data Recipients",
+    "text": "Cloudflare Inc. (processor, Art. 28 GDPR) for hosting and analytics. Your data is not sold or shared with third-party advertisers."
+  },
+  "transfers": {
+    "title": "Transfers Outside EU",
+    "text": "Cloudflare is certified under the EU-U.S. Data Privacy Framework. Appropriate safeguards (standard contractual clauses) govern transfers to the United States."
+  },
+  "retention": {
+    "title": "Retention Periods",
+    "items": [
+      "Cloudflare Analytics: 24 months maximum (IP anonymization)",
+      "Cookie consent: 13 months (CNIL compliance)",
+      "Security logs: 30 days maximum"
+    ]
+  },
+  "rights": {
+    "title": "Your Rights (Art. 15-22 GDPR)",
+    "items": [
+      { "right": "Access", "description": "Obtain a copy of your data" },
+      { "right": "Rectification", "description": "Correct inaccurate data" },
+      { "right": "Erasure", "description": "Request deletion (« right to be forgotten »)" },
+      { "right": "Restriction", "description": "Freeze the use of your data" },
+      { "right": "Portability", "description": "Receive your data in a structured, machine-readable format" },
+      { "right": "Objection", "description": "Object to processing on legitimate grounds" },
+      { "right": "Automated decisions", "description": "Not be subject to solely automated decisions" }
+    ],
+    "exercise": "To exercise your rights: contact Cloudflare (dpo@cloudflare.com) or use the CNIL form."
+  },
+  "complaint": {
+    "title": "Complaint to Supervisory Authority",
+    "text": "In case of dispute, you can lodge a complaint with the CNIL: <a href=\"https://www.cnil.fr/en/you-wish-lodge-complaint\" target=\"_blank\" rel=\"noreferrer\">cnil.fr/complaint</a>"
+  },
+  "disclaimer": "Analytics data is processed by Cloudflare (CFA) as a processor, not by the publisher of this site."
+}

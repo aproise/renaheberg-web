@@ -1,0 +1,94 @@
+---
+import LegalLayout from '../../../layouts/LegalLayout.astro';
+import CookieConsent from '../../../components/CookieConsent.astro';
+import MirrorBanner from '../../../components/MirrorBanner.astro';
+import { getLegalContent } from '../../../utils/i18n';
+
+const locale = 'fr' as const;
+const page = 'gdpr';
+const t = await getLegalContent(locale, page);
+const meta = {
+  title: 'Droits RGPD — Exercice de vos droits — RenaHeberg',
+  description: 'Exercer vos droits RGPD : accès, rectification, effacement, portabilité, opposition, limitation. Contact DPO, délais, réclamation CNIL.'
+};
+---
+<LegalLayout locale={locale} title={meta.title} description={meta.description} translations={import('../../../content/fr.json').then(m => m.default)}>
+  <MirrorBanner locale={locale} translations={import('../../../content/fr.json').then(m => m.default)} />
+  <main class="flex-1">
+    <section class="container-custom mx-auto px-4 py-16">
+      <header class="mb-12 text-center">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-[var(--ink)] mb-4">{t.title}</h1>
+        <p class="text-[var(--muted)] text-sm">Dernière mise à jour : {t.lastUpdated}</p>
+      </header>
+
+      <div class="max-w-3xl mx-auto space-y-12">
+        {t.intro && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.intro.title}</h2>
+            <p>{t.intro.text}</p>
+          </section>
+        )}
+
+        {t.rights && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.rights.title}</h2>
+            <div class="space-y-6">
+              {t.rights.items.map((right: any) => (
+                <div class="p-4 bg-[var(--paper)] border border-[var(--line)] rounded-lg">
+                  <div class="flex items-start gap-3">
+                    <span class="px-2 py-0.5 bg-[var(--accent)] text-[var(--accent-text)] text-xs font-mono rounded">{right.article}</span>
+                    <div>
+                      <h3 class="font-semibold">{right.name}</h3>
+                      <p class="text-[var(--muted)] text-sm mt-1">{right.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {t.exercise && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.exercise.title}</h2>
+            <ol class="space-y-3">
+              {t.exercise.steps.map((step: any, i: number) => (
+                <li class="flex gap-3">
+                  <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center bg-[var(--accent)] text-[var(--accent-text)] rounded-full text-sm font-medium">{i + 1}</span>
+                  <span set:html={step} />
+                </li>
+              ))}
+            </ol>
+            <p class="mt-4" set:html={t.exercise.timeline} />
+          </section>
+        )}
+
+        {t.verification && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.verification.title}</h2>
+            <p>{t.verification.text}</p>
+          </section>
+        )}
+
+        {t.refusal && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.refusal.title}</h2>
+            <p set:html={t.refusal.text} />
+          </section>
+        )}
+
+        {t.representative && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.representative.title}</h2>
+            <p>{t.representative.text}</p>
+          </section>
+        )}
+
+<aside class="p-4 bg-[var(--paper)] border border-[var(--line)] rounded-lg">
+  <p class="text-sm text-[var(--muted)]" set:html={t.disclaimer} />
+</aside>
+      </div>
+    </section>
+  </main>
+  <CookieConsent locale={locale} translations={import('../../../content/fr.json').then(m => m.default)} />
+</LegalLayout>

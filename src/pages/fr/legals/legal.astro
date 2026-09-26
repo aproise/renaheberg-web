@@ -1,0 +1,92 @@
+---
+import LegalLayout from '../../../layouts/LegalLayout.astro';
+import CookieConsent from '../../../components/CookieConsent.astro';
+import MirrorBanner from '../../../components/MirrorBanner.astro';
+import { getLegalContent } from '../../../utils/i18n';
+
+const locale = 'fr' as const;
+const page = 'legal';
+const t = await getLegalContent(locale, page);
+const meta = {
+  title: 'Mentions légales — RenaHeberg',
+  description: 'Mentions légales de RenaHeberg : éditeur, hébergement, sous-traitant, propriété intellectuelle, responsabilité, droit applicable.'
+};
+---
+<LegalLayout locale={locale} title={meta.title} description={meta.description} translations={import('../../../content/fr.json').then(m => m.default)}>
+  <MirrorBanner locale={locale} translations={import('../../../content/fr.json').then(m => m.default)} />
+  <main class="flex-1">
+    <section class="container-custom mx-auto px-4 py-16">
+      <header class="mb-12 text-center">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-[var(--ink)] mb-4">{t.title}</h1>
+        <p class="text-[var(--muted)] text-sm">Dernière mise à jour : {t.lastUpdated}</p>
+      </header>
+
+      <div class="max-w-3xl mx-auto space-y-12">
+        {t.publisher && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.publisher.title}</h2>
+            <ul>
+              {t.publisher.items.map((item: string) => <li>{item}</li>)}
+            </ul>
+          </section>
+        )}
+
+        {t.director && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.director.title}</h2>
+            <p>{t.director.text}</p>
+          </section>
+        )}
+
+        {t.hosting && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.hosting.title}</h2>
+            <ul>
+              {t.hosting.items.map((item: string) => <li>{item}</li>)}
+            </ul>
+          </section>
+        )}
+
+        {t.processor && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.processor.title}</h2>
+            <p set:html={t.processor.text} />
+          </section>
+        )}
+
+        {t.ip && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.ip.title}</h2>
+            <p set:html={t.ip.text} />
+          </section>
+        )}
+
+        {t.liability && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.liability.title}</h2>
+            <p>{t.liability.text}</p>
+          </section>
+        )}
+
+        {t.law && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.law.title}</h2>
+            <p>{t.law.text}</p>
+          </section>
+        )}
+
+        {t.contact && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.contact.title}</h2>
+            <p set:html={t.contact.text} />
+          </section>
+        )}
+
+<aside class="p-4 bg-[var(--paper)] border border-[var(--line)] rounded-lg">
+  <p class="text-sm text-[var(--muted)]" set:html={t.disclaimer} />
+</aside>
+      </div>
+    </section>
+  </main>
+  <CookieConsent locale={locale} translations={import('../../../content/fr.json').then(m => m.default)} />
+</LegalLayout>

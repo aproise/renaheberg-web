@@ -3,6 +3,11 @@ import en from '../content/en.json';
 
 export type Locale = 'fr' | 'en';
 export type Translations = typeof fr;
+export type LegalContent = {
+  title: string;
+  lastUpdated: string;
+  [key: string]: any;
+};
 
 export const translations: Record<Locale, Translations> = { fr, en };
 
@@ -22,4 +27,9 @@ export function getAlternateUrls(pathname: string, site: string | URL): { hrefla
     { hreflang: 'en', href: `${base}/en${pathname}` },
     { hreflang: 'x-default', href: `${base}/` },
   ];
+}
+
+export async function getLegalContent(locale: Locale, page: string): Promise<LegalContent> {
+  const module = await import(`../content/legal/${locale}/${page}.json`);
+  return module.default;
 }

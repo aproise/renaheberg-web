@@ -49,5 +49,27 @@
   "meta": {
     "title": "RenaHeberg — Formerly a non-profit hosting service",
     "description": "Learn about the association's history and find out how to stay up to date on RenaHeberg, a former nonprofit organization under the 1901 law dedicated to providing assistance."
+  },
+  "cookie": {
+    "banner": {
+      "text": "This site uses Cloudflare Web Analytics to measure audience. Data is processed by Cloudflare (CFA), not by us.",
+      "accept": "Accept",
+      "refuse": "Refuse",
+      "learnMore": "Learn more"
+    },
+    "links": {
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy"
+    },
+    "mirrorBanner": {
+      "text": "⚠️ You are on a mirror of renaheberg.fr without Cloudflare cookies.",
+      "button": "Return to the main site by accepting cookies"
+    }
+  },
+  "error404": {
+    "title": "Page Not Found",
+    "subtitle": "This page doesn't exist or has been moved.",
+    "backHome": "Back to Home",
+    "backHomeAria": "Return to homepage"
   }
 }

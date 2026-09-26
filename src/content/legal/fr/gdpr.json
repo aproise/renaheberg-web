@@ -1,0 +1,72 @@
+{
+  "title": "Droits RGPD — Exercice de vos droits",
+  "lastUpdated": "2026-09-26",
+  "intro": {
+    "title": "Vos droits sur vos données personnelles",
+    "text": "Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi Informatique et Libertés, vous disposez des droits suivants sur vos données personnelles."
+  },
+  "rights": {
+    "title": "Détail de vos droits",
+    "items": [
+      {
+        "article": "Art. 15",
+        "name": "Droit d'accès",
+        "description": "Obtenir la confirmation que vos données sont traitées, et accéder à ces données (copie, finalités, catégories, destinataires, durée de conservation, origine)."
+      },
+      {
+        "article": "Art. 16",
+        "name": "Droit de rectification",
+        "description": "Faire corriger des données inexactes ou incomplètes vous concernant."
+      },
+      {
+        "article": "Art. 17",
+        "name": "Droit à l'effacement (« droit à l'oubli »)",
+        "description": "Demander la suppression de vos données quand elles ne sont plus nécessaires, que vous retirez votre consentement, ou en cas de traitement illicite."
+      },
+      {
+        "article": "Art. 18",
+        "name": "Droit à la limitation",
+        "description": "Geler l'utilisation de vos données (ex: pendant la vérification d'une rectification ou d'une opposition)."
+      },
+      {
+        "article": "Art. 20",
+        "name": "Droit à la portabilité",
+        "description": "Recevoir vos données dans un format structuré, couramment utilisé et lisible par machine, pour les transmettre à un autre responsable."
+      },
+      {
+        "article": "Art. 21",
+        "name": "Droit d'opposition",
+        "description": "Vous opposer à tout moment au traitement pour des motifs liés à votre situation particulière (sauf motifs légitimes impérieux)."
+      },
+      {
+        "article": "Art. 22",
+        "name": "Décisions individuelles automatisées",
+        "description": "Ne pas faire l'objet d'une décision fondée exclusivement sur un traitement automatisé produisant des effets juridiques vous concernant."
+      }
+    ]
+  },
+  "exercise": {
+    "title": "Comment exercer vos droits ?",
+    "steps": [
+      "Identifiez le droit(s) que vous souhaitez exercer",
+      "Contactez le DPO de Cloudflare : <a href=\"mailto:dpo@cloudflare.com\">dpo@cloudflare.com</a> (sous-traitant principal)",
+      "Ou utilisez le formulaire de la CNIL : <a href=\"https://www.cnil.fr/fr/exercer-vos-droits\" target=\"_blank\" rel=\"noreferrer\">cnil.fr/exercer-vos-droits</a>",
+      "Joignez une pièce d'identité si nécessaire (pour vérifier votre identité)",
+      "Précisez le(s) droit(s) concerné(s) et le traitement visé (analytics Cloudflare)"
+    ],
+    "timeline": "Le responsable doit répondre dans <strong>1 mois</strong> (prorogeable de 2 mois si complexité). En cas de refus, motif écrit obligatoire."
+  },
+  "verification": {
+    "title": "Vérification d'identité",
+    "text": "Pour protéger vos données, une preuve d'identité peut être demandée (copie carte d'identité). Elle sera détruite après vérification."
+  },
+  "refusal": {
+    "title": "En cas de refus ou absence de réponse",
+    "text": "Vous pouvez saisir la CNIL : <a href=\"https://www.cnil.fr/fr/vous-souhaitez-deposer-une-plainte\" target=\"_blank\" rel=\"noreferrer\">cnil.fr/plainte</a> ou engager une action judiciaire."
+  },
+  "representative": {
+    "title": "Mandataire",
+    "text": "Vous pouvez mandater une association de défense des consommateurs ou un avocat pour exercer vos droits à votre place."
+  },
+  "disclaimer": "Les données d'analytics sont traitées par Cloudflare (CFA) en tant que sous-traitant, non par l'éditeur de ce site."
+}

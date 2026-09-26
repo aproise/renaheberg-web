@@ -1,0 +1,62 @@
+{
+  "title": "Politique de confidentialité",
+  "lastUpdated": "2026-09-26",
+  "controller": {
+    "title": "Responsable du traitement",
+    "text": "Ce site d'archive est géré par Aproise (développeur), agissant en tant que responsable du traitement des données personnelles collectées sur ce site. L'ancienne association RenaHeberg (RNA W212012750) a été dissoute en octobre 2020."
+  },
+  "dpo": {
+    "title": "Délégué à la protection des données (DPO)",
+    "text": "Vous pouvez contacter notre délégué à la protection des données via Cloudflare : <a href=\"https://www.cloudflare.com/cdn-cgi/l/email-protection#dpo\" target=\"_blank\" rel=\"noreferrer\">dpo@cloudflare.com</a>"
+  },
+  "purposes": {
+    "title": "Finalités et bases légales",
+    "items": [
+      { "purpose": "Mesure d'audience et analytics", "basis": "Consentement (Art. 6.1.a RGPD)", "details": "Via Cloudflare Web Analytics pour comprendre l'utilisation du site" },
+      { "purpose": "Gestion du consentement cookies", "basis": "Obligation légale (Art. 6.1.c RGPD)", "details": "Enregistrement de vos choix de consentement" }
+    ]
+  },
+  "dataCategories": {
+    "title": "Catégories de données collectées",
+    "items": [
+      "Adresse IP (anonymisée par Cloudflare)",
+      "Données de navigation (pages vues, durée, référent)",
+      "Préférences de langue et thème",
+      "Choix de consentement (accept/refuse, timestamp)"
+    ]
+  },
+  "recipients": {
+    "title": "Destinataires des données",
+    "text": "Cloudflare Inc. (sous-traitant, Art. 28 RGPD) pour l'hébergement et l'analytics. Vos données ne sont pas vendues ni partagées avec des tiers publicitaires."
+  },
+  "transfers": {
+    "title": "Transferts hors UE",
+    "text": "Cloudflare est certifié EU-U.S. Data Privacy Framework. Des garanties appropriées (clauses contractuelles types) encadrent les transferts vers les États-Unis."
+  },
+  "retention": {
+    "title": "Durée de conservation",
+    "items": [
+      "Analytics Cloudflare : 24 mois maximum (anonymisation IP)",
+      "Consentement cookies : 13 mois (conformité CNIL)",
+      "Logs de sécurité : 30 jours maximum"
+    ]
+  },
+  "rights": {
+    "title": "Vos droits (Art. 15-22 RGPD)",
+    "items": [
+      { "right": "Accès", "description": "Obtenir une copie de vos données" },
+      { "right": "Rectification", "description": "Corriger des données inexactes" },
+      { "right": "Effacement", "description": "Demander la suppression (« droit à l'oubli »)" },
+      { "right": "Limitation", "description": "Geler l'utilisation de vos données" },
+      { "right": "Portabilité", "description": "Récupérer vos données dans un format structuré" },
+      { "right": "Opposition", "description": "Vous opposer au traitement pour motifs légitimes" },
+      { "right": "Décisions automatisées", "description": "Ne pas faire l'objet de décisions purement automatisées" }
+    ],
+    "exercise": "Pour exercer vos droits : contactez Cloudflare (dpo@cloudflare.com) ou utilisez le formulaire de la CNIL."
+  },
+  "complaint": {
+    "title": "Réclamation auprès de la CNIL",
+    "text": "En cas de litige, vous pouvez saisir la CNIL : <a href=\"https://www.cnil.fr/fr/vous-souhaitez-deposer-une-plainte\" target=\"_blank\" rel=\"noreferrer\">cnil.fr/plainte</a>"
+  },
+  "disclaimer": "Les données d'analytics sont traitées par Cloudflare (CFA) en tant que sous-traitant, non par l'éditeur de ce site."
+}

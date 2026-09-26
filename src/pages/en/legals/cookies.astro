@@ -1,0 +1,96 @@
+---
+import LegalLayout from '../../../layouts/LegalLayout.astro';
+import CookieConsent from '../../../components/CookieConsent.astro';
+import MirrorBanner from '../../../components/MirrorBanner.astro';
+import { getLegalContent } from '../../../utils/i18n';
+
+const locale = 'en' as const;
+const page = 'cookies';
+const t = await getLegalContent(locale, page);
+const meta = {
+  title: 'Cookie Policy — RenaHeberg',
+  description: 'RenaHeberg Cookie Policy: necessary cookies, Cloudflare analytics, consent management, refusal consequences.'
+};
+---
+<LegalLayout locale={locale} title={meta.title} description={meta.description} translations={import('../../../content/en.json').then(m => m.default)}>
+  <MirrorBanner locale={locale} translations={import('../../../content/en.json').then(m => m.default)} />
+  <main class="flex-1">
+    <section class="container-custom mx-auto px-4 py-16">
+      <header class="mb-12 text-center">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-[var(--ink)] mb-4">{t.title}</h1>
+        <p class="text-[var(--muted)] text-sm">Last updated: {t.lastUpdated}</p>
+      </header>
+
+      <div class="max-w-3xl mx-auto space-y-12">
+        {t.intro && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.intro.title}</h2>
+            <p>{t.intro.text}</p>
+          </section>
+        )}
+
+        {t.categories && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.categories.title}</h2>
+            {t.categories.items.map((cat: any) => (
+              <div class="mb-8 p-4 bg-[var(--paper)] border border-[var(--line)] rounded-lg">
+                <h3 class="font-semibold mb-2">{cat.name}</h3>
+                <p class="text-[var(--muted)] mb-2">{cat.description}</p>
+                <p class="text-sm text-[var(--ink)] mb-3"><em>Legal basis:</em> {cat.consent}</p>
+                {cat.cookies && (
+                  <div class="space-y-2">
+                    {cat.cookies.map((cookie: any) => (
+                      <div class="p-3 bg-[var(--bg)] border border-[var(--line)] rounded text-sm">
+                        <strong>{cookie.name}</strong> — {cookie.purpose}<br>
+                        <span class="text-[var(--muted)]">Duration: {cookie.duration} • Domain: {cookie.domain}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {cat.note && <p class="text-sm text-[var(--muted)] mt-2"><em>Note:</em> {cat.note}</p>}
+              </div>
+            ))}
+          </section>
+        )}
+
+        {t.consent && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.consent.title}</h2>
+            <p set:html={t.consent.text} />
+          </section>
+        )}
+
+        {t.withdraw && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.withdraw.title}</h2>
+            <p set:html={t.withdraw.text} />
+          </section>
+        )}
+
+        {t.refuseConsequence && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.refuseConsequence.title}</h2>
+            <p set:html={t.refuseConsequence.text} />
+          </section>
+        )}
+
+        {t.browserSettings && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.browserSettings.title}</h2>
+            <p>{t.browserSettings.text}</p>
+            <ul class="space-y-1">
+              {t.browserSettings.links.map((link: any) => (
+                <li><a href={link.url} target="_blank" rel="noreferrer" class="underline hover:no-underline">{link.name}</a></li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+<aside class="p-4 bg-[var(--paper)] border border-[var(--line)] rounded-lg">
+  <p class="text-sm text-[var(--muted)]" set:html={t.disclaimer} />
+</aside>
+      </div>
+    </section>
+  </main>
+  <CookieConsent locale={locale} translations={import('../../../content/en.json').then(m => m.default)} />
+</LegalLayout>

@@ -1,0 +1,54 @@
+{
+  "title": "Politique des cookies",
+  "lastUpdated": "2026-09-26",
+  "intro": {
+    "title": "Qu'est-ce qu'un cookie ?",
+    "text": "Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, smartphone, tablette) lors de la visite d'un site web. Il permet de reconnaître votre navigateur lors de visites ultérieures."
+  },
+  "categories": {
+    "title": "Catégories de cookies utilisés",
+    "items": [
+      {
+        "name": "Nécessaires (strictement nécessaires)",
+        "description": "Indispensables au fonctionnement du site (choix de langue, thème, consentement).",
+        "consent": "Aucun consentement requis (Art. 6.1.b RGPD)",
+        "cookies": [
+          { "name": "cookie_consent", "purpose": "Mémorise votre choix (accept/refuse)", "duration": "13 mois", "domain": ".renaheberg.fr" }
+        ]
+      },
+      {
+        "name": "Analytics (Cloudflare Web Analytics)",
+        "description": "Mesure d'audience anonyme pour améliorer le site.",
+        "consent": "Consentement requis (Art. 6.1.a RGPD)",
+        "cookies": [
+          { "name": "__cf_bm", "purpose": "Gestion du trafic bot (Cloudflare)", "duration": "30 min", "domain": ".cloudflare.com" },
+          { "name": "cf_clearance", "purpose": "Validation challenge Cloudflare", "duration": "1 an", "domain": ".cloudflare.com" }
+        ],
+        "note": "Ces cookies sont gérés par Cloudflare. L'IP est anonymisée. Aucune donnée nominative n'est collectée."
+      }
+    ]
+  },
+  "consent": {
+    "title": "Gestion de votre consentement",
+    "text": "Lors de votre première visite, une bannière vous demande d'accepter ou refuser les cookies analytics. Votre choix est mémorisé 13 mois via le cookie <code>cookie_consent</code>."
+  },
+  "withdraw": {
+    "title": "Retirer votre consentement",
+    "text": "Vous pouvez changer d'avis à tout moment en cliquant sur « Gérer les cookies » en bas de page, ou en supprimant le cookie <code>cookie_consent</code> de votre navigateur."
+  },
+  "refuseConsequence": {
+    "title": "Conséquences du refus",
+    "text": "Si vous refusez les cookies analytics : vous serez redirigé vers notre miroir <strong>renaheberg.ape.pm</strong> (même contenu, sans analytics Cloudflare). Vous pourrez y accepter les cookies pour revenir sur le site principal."
+  },
+  "browserSettings": {
+    "title": "Paramètres navigateur",
+    "text": "Vous pouvez aussi configurer votre navigateur pour bloquer/supprimer les cookies :",
+    "links": [
+      { "name": "Chrome", "url": "https://support.google.com/chrome/answer/95647" },
+      { "name": "Firefox", "url": "https://support.mozilla.org/fr/kb/cookies" },
+      { "name": "Safari", "url": "https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" },
+      { "name": "Edge", "url": "https://support.microsoft.com/fr-fr/edge" }
+    ]
+  },
+  "disclaimer": "Les données d'analytics sont traitées par Cloudflare (CFA) en tant que sous-traitant, non par l'éditeur de ce site."
+}

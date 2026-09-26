@@ -1,0 +1,113 @@
+---
+import LegalLayout from '../../../layouts/LegalLayout.astro';
+import CookieConsent from '../../../components/CookieConsent.astro';
+import MirrorBanner from '../../../components/MirrorBanner.astro';
+import { getLegalContent } from '../../../utils/i18n';
+
+const locale = 'fr' as const;
+const page = 'privacy';
+const t = await getLegalContent(locale, page);
+const meta = {
+  title: 'Politique de confidentialité — RenaHeberg',
+  description: 'Politique de confidentialité de RenaHeberg : traitement des données, cookies, droits RGPD, contact DPO.'
+};
+---
+<LegalLayout locale={locale} title={meta.title} description={meta.description} translations={import('../../../content/fr.json').then(m => m.default)}>
+  <MirrorBanner locale={locale} translations={import('../../../content/fr.json').then(m => m.default)} />
+  <main class="flex-1">
+    <section class="container-custom mx-auto px-4 py-16">
+      <header class="mb-12 text-center">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-[var(--ink)] mb-4">{t.title}</h1>
+        <p class="text-[var(--muted)] text-sm">Dernière mise à jour : {t.lastUpdated}</p>
+      </header>
+
+      <div class="max-w-3xl mx-auto space-y-12">
+        {t.controller && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.controller.title}</h2>
+            <p set:html={t.controller.text} />
+          </section>
+        )}
+
+        {t.dpo && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.dpo.title}</h2>
+            <p set:html={t.dpo.text} />
+          </section>
+        )}
+
+        {t.purposes && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.purposes.title}</h2>
+            <ul>
+              {t.purposes.items.map((item: any) => (
+                <li>
+                  <strong>{item.purpose}</strong> — {item.basis}
+                  <p class="text-sm text-[var(--muted)] mt-1">{item.details}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {t.dataCategories && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.dataCategories.title}</h2>
+            <ul>
+              {t.dataCategories.items.map((item: string) => <li>{item}</li>)}
+            </ul>
+          </section>
+        )}
+
+        {t.recipients && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.recipients.title}</h2>
+            <p set:html={t.recipients.text} />
+          </section>
+        )}
+
+        {t.transfers && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.transfers.title}</h2>
+            <p set:html={t.transfers.text} />
+          </section>
+        )}
+
+        {t.retention && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.retention.title}</h2>
+            <ul>
+              {t.retention.items.map((item: string) => <li>{item}</li>)}
+            </ul>
+          </section>
+        )}
+
+        {t.rights && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.rights.title}</h2>
+            <ul>
+              {t.rights.items.map((item: any) => (
+                <li>
+                  <strong>{item.right}</strong> — {item.description}
+                </li>
+              ))}
+            </ul>
+            <p set:html={t.rights.exercise} />
+          </section>
+        )}
+
+        {t.complaint && (
+          <section class="prose prose-[var(--ink)] dark:prose-invert">
+            <h2>{t.complaint.title}</h2>
+            <p set:html={t.complaint.text} />
+          </section>
+        )}
+
+<aside class="p-4 bg-[var(--paper)] border border-[var(--line)] rounded-lg">
+  <p class="text-sm text-[var(--muted)]" set:html={t.disclaimer} />
+</aside>
+      </div>
+    </section>
+  </main>
+  <CookieConsent locale={locale} translations={import('../../../content/fr.json').then(m => m.default)} />
+</LegalLayout>

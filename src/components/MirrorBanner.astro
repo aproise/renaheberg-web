@@ -1,0 +1,40 @@
+---
+interface Props {
+  locale: 'fr' | 'en';
+}
+const { locale } = Astro.props;
+const t = await import(`../content/${locale}.json`);
+const mirror = t.default.cookie.mirrorBanner;
+---
+<div id="mirror-banner" class="fixed top-0 left-0 right-0 z-40 bg-amber-100 dark:bg-amber-900 border-b border-amber-300 dark:border-amber-700 hidden" role="banner" aria-live="polite">
+  <div class="container-custom mx-auto px-4 py-2 md:py-1.5">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <p class="text-sm text-amber-900 dark:text-amber-100 font-medium">
+        {mirror.text}
+      </p>
+      <a
+        id="mirror-link"
+        href="#"
+        class="btn-primary text-sm px-4 py-1.5 whitespace-nowrap"
+        aria-label={mirror.button}
+      >
+        {mirror.button}
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const banner = document.getElementById('mirror-banner');
+    const link = document.getElementById('mirror-link');
+    if (!banner || !link) return;
+
+    const isMirrorDomain = window.location.hostname === 'renaheberg.ape.pm';
+
+    if (isMirrorDomain) {
+      banner.classList.remove('hidden');
+      link.href = `https://renaheberg.fr${window.location.pathname}${window.location.search}`;
+    }
+  })();
+</script>

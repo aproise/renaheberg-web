@@ -1,0 +1,46 @@
+{
+  "title": "Mentions légales",
+  "lastUpdated": "2026-09-26",
+  "publisher": {
+    "title": "Éditeur du site",
+    "items": [
+      "Association RenaHeberg (dissoute en octobre 2020)",
+      "RNA : W212012750",
+      "Ancien hébergeur web associatif à but non lucratif (2018-2020)",
+      "Site d'archive uniquement — service non actif"
+    ]
+  },
+  "director": {
+    "title": "Directeur de la publication",
+    "text": "Aproise (développeur du site d'archive)"
+  },
+  "hosting": {
+    "title": "Hébergement",
+    "items": [
+      "Cloudflare Pages (Cloudflare Inc.)",
+      "101 Townsend St, San Francisco, CA 94107, USA",
+      "Site miroir : renaheberg.ape.pm (hébergement distinct)"
+    ]
+  },
+  "processor": {
+    "title": "Sous-traitant (Art. 28 RGPD)",
+    "text": "Cloudflare Inc. agit en tant que sous-traitant pour l'hébergement, la distribution (CDN) et l'analytics (Cloudflare Web Analytics). Un accord de traitement des données (DPA) est en place."
+  },
+  "ip": {
+    "title": "Propriété intellectuelle",
+    "text": "Le contenu de ce site d'archive est mis à disposition à des fins historiques et éducatives. Code source : <a href=\"https://git.renaheberg.fr\" target=\"_blank\" rel=\"noreferrer\">git.renaheberg.fr</a>."
+  },
+  "liability": {
+    "title": "Responsabilité",
+    "text": "Ce site est une archive historique. L'information fournie l'est « en l'état », sans garantie d'exactitude, de complétude ou d'actualité. L'éditeur ne saurait être tenu responsable de dommages directs ou indirects résultant de l'utilisation de ce site."
+  },
+  "law": {
+    "title": "Droit applicable et juridiction",
+    "text": "Ce site est régi par le droit français. Tout litige relève de la compétence des tribunaux français."
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "Pour toute question relative à ce site d'archive : <a href=\"https://git.renaheberg.fr\" target=\"_blank\" rel=\"noreferrer\">git.renaheberg.fr</a>"
+  },
+  "disclaimer": "Les données d'analytics sont traitées par Cloudflare (CFA) en tant que sous-traitant, non par l'éditeur de ce site."
+}
