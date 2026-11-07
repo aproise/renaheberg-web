@@ -2,11 +2,11 @@
 import LegalLayout from '../../../layouts/LegalLayout.astro';
 import CookieConsent from '../../../components/CookieConsent.astro';
 import MirrorBanner from '../../../components/MirrorBanner.astro';
-import { getLegalContent } from '../../../utils/i18n';
+import { getLegalTranslations } from '../../../utils/i18n';
 
 const locale = 'fr' as const;
-const page = 'gdpr';
-const t = await getLegalContent(locale, page);
+const page = 'gdpr' as const;
+const t = await getLegalTranslations(locale, page);
 const meta = {
   title: 'Droits RGPD — Exercice de vos droits — RenaHeberg',
   description: 'Exercer vos droits RGPD : accès, rectification, effacement, portabilité, opposition, limitation. Contact DPO, délais, réclamation CNIL.'
@@ -29,11 +29,11 @@ const meta = {
           </section>
         )}
 
-        {t.rights && (
+        {t.gdprRights && (
           <section class="prose prose-[var(--ink)] dark:prose-invert">
-            <h2>{t.rights.title}</h2>
+            <h2>{t.gdprRights.title}</h2>
             <div class="space-y-6">
-              {t.rights.items.map((right: any) => (
+              {t.gdprRights.items.map((right: any) => (
                 <div class="p-4 bg-[var(--paper)] border border-[var(--line)] rounded-lg">
                   <div class="flex items-start gap-3">
                     <span class="px-2 py-0.5 bg-[var(--accent)] text-[var(--accent-text)] text-xs font-mono rounded">{right.article}</span>

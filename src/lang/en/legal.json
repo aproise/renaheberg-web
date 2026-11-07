@@ -1,0 +1,236 @@
+{
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "2026-09-26",
+    "controller": {
+      "title": "Data Controller",
+      "text": "This archive site is managed by Aproise (developer), acting as the data controller for personal data collected on this site. The former RenaHeberg association (RNA W212012750) was dissolved in October 2020."
+    },
+    "dpo": {
+      "title": "Data Protection Officer (DPO)",
+      "text": "You can contact our Data Protection Officer via Cloudflare: <a href=\"https://www.cloudflare.com/cdn-cgi/l/email-protection#dpo\" target=\"_blank\" rel=\"noreferrer\">dpo@cloudflare.com</a>"
+    },
+    "purposes": {
+      "title": "Purposes and Legal Bases",
+      "items": [
+        { "purpose": "Audience measurement and analytics", "basis": "Consent (Art. 6.1.a GDPR)", "details": "Via Cloudflare Web Analytics to understand site usage" },
+        { "purpose": "Cookie consent management", "basis": "Legal obligation (Art. 6.1.c GDPR)", "details": "Recording your consent choices" }
+      ]
+    },
+    "dataCategories": {
+      "title": "Categories of Data Collected",
+      "items": [
+        "IP address (anonymized by Cloudflare)",
+        "Navigation data (pages viewed, duration, referrer)",
+        "Language and theme preferences",
+        "Consent choices (accept/refuse, timestamp)"
+      ]
+    },
+    "recipients": {
+      "title": "Data Recipients",
+      "text": "Cloudflare Inc. (processor, Art. 28 GDPR) for hosting and analytics. Your data is not sold or shared with third-party advertisers."
+    },
+    "transfers": {
+      "title": "Transfers Outside EU",
+      "text": "Cloudflare is certified under the EU-U.S. Data Privacy Framework. Appropriate safeguards (standard contractual clauses) govern transfers to the United States."
+    },
+    "retention": {
+      "title": "Retention Periods",
+      "items": [
+        "Cloudflare Analytics: 24 months maximum (IP anonymization)",
+        "Cookie consent: 13 months (CNIL compliance)",
+        "Security logs: 30 days maximum"
+      ]
+    },
+    "rights": {
+      "title": "Your Rights (Art. 15-22 GDPR)",
+      "items": [
+        { "right": "Access", "description": "Obtain a copy of your data" },
+        { "right": "Rectification", "description": "Correct inaccurate data" },
+        { "right": "Erasure", "description": "Request deletion (« right to be forgotten »)" },
+        { "right": "Restriction", "description": "Freeze the use of your data" },
+        { "right": "Portability", "description": "Receive your data in a structured, machine-readable format" },
+        { "right": "Objection", "description": "Object to processing on legitimate grounds" },
+        { "right": "Automated decisions", "description": "Not be subject to solely automated decisions" }
+      ],
+      "exercise": "To exercise your rights: contact Cloudflare (dpo@cloudflare.com) or use the CNIL form."
+    },
+    "complaint": {
+      "title": "Complaint to Supervisory Authority",
+      "text": "In case of dispute, you can lodge a complaint with the CNIL: <a href=\"https://www.cnil.fr/en/you-wish-lodge-complaint\" target=\"_blank\" rel=\"noreferrer\">cnil.fr/complaint</a>"
+    },
+    "disclaimer": "Analytics data is processed by Cloudflare (CFA) as a processor, not by the publisher of this site."
+  },
+  "legal": {
+    "title": "Legal Notice",
+    "lastUpdated": "2026-09-26",
+    "publisher": {
+      "title": "Site Publisher",
+      "items": [
+        "Former RenaHeberg association (dissolved October 2020)",
+        "RNA: W212012750",
+        "Former non-profit web hosting association (2018-2020)",
+        "Archive site only — service not active"
+      ]
+    },
+    "director": {
+      "title": "Publication Director",
+      "text": "Aproise (archive site developer)"
+    },
+    "hosting": {
+      "title": "Hosting",
+      "items": [
+        "Cloudflare Pages (Cloudflare Inc.)",
+        "101 Townsend St, San Francisco, CA 94107, USA",
+        "Mirror site: renaheberg.ape.pm (separate hosting)"
+      ]
+    },
+    "processor": {
+      "title": "Processor (Art. 28 GDPR)",
+      "text": "Cloudflare Inc. acts as processor for hosting, distribution (CDN), and analytics (Cloudflare Web Analytics). A Data Processing Agreement (DPA) is in place."
+    },
+    "ip": {
+      "title": "Intellectual Property",
+      "text": "This archive site content is provided for historical and educational purposes. Source code: <a href=\"https://git.renaheberg.fr\" target=\"_blank\" rel=\"noreferrer\">git.renaheberg.fr</a>."
+    },
+    "liability": {
+      "title": "Liability",
+      "text": "This site is a historical archive. Information is provided \"as is\", without warranty of accuracy, completeness, or timeliness. The publisher cannot be held liable for direct or indirect damages resulting from use of this site."
+    },
+    "law": {
+      "title": "Applicable Law and Jurisdiction",
+      "text": "This site is governed by French law. Any disputes fall under the jurisdiction of French courts."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "For any questions about this archive site: <a href=\"https://git.renaheberg.fr\" target=\"_blank\" rel=\"noreferrer\">git.renaheberg.fr</a>"
+    },
+    "disclaimer": "Analytics data is processed by Cloudflare (CFA) as a processor, not by the publisher of this site."
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "lastUpdated": "2026-09-26",
+    "intro": {
+      "title": "What is a cookie?",
+      "text": "A cookie is a small text file stored on your device (computer, smartphone, tablet) when you visit a website. It allows the site to recognize your browser on subsequent visits."
+    },
+    "categories": {
+      "title": "Categories of cookies used",
+      "items": [
+        {
+          "name": "Necessary (strictly necessary)",
+          "description": "Essential for site functionality (language, theme, consent).",
+          "consent": "No consent required (Art. 6.1.b GDPR)",
+          "cookies": [
+            { "name": "cookie_consent", "purpose": "Remembers your choice (accept/refuse)", "duration": "13 months", "domain": ".renaheberg.fr" }
+          ]
+        },
+        {
+          "name": "Analytics (Cloudflare Web Analytics)",
+          "description": "Anonymous audience measurement to improve the site.",
+          "consent": "Consent required (Art. 6.1.a GDPR)",
+          "cookies": [
+            { "name": "__cf_bm", "purpose": "Bot traffic management (Cloudflare)", "duration": "30 min", "domain": ".cloudflare.com" },
+            { "name": "cf_clearance", "purpose": "Cloudflare challenge validation", "duration": "1 year", "domain": ".cloudflare.com" }
+          ],
+          "note": "These cookies are managed by Cloudflare. IP is anonymized. No personal data is collected."
+        }
+      ]
+    },
+    "consent": {
+      "title": "Consent management",
+      "text": "On your first visit, a banner asks you to accept or refuse analytics cookies. Your choice is stored for 13 months via the <code>cookie_consent</code> cookie."
+    },
+    "withdraw": {
+      "title": "Withdrawing consent",
+      "text": "You can change your mind at any time by clicking \"Manage cookies\" in the footer, or by deleting the <code>cookie_consent</code> cookie from your browser."
+    },
+    "refuseConsequence": {
+      "title": "Consequences of refusal",
+      "text": "If you refuse analytics cookies: you will be redirected to our mirror <strong>renaheberg.ape.pm</strong> (same content, no Cloudflare analytics). You can accept cookies there to return to the main site."
+    },
+    "browserSettings": {
+      "title": "Browser settings",
+      "text": "You can also configure your browser to block/delete cookies:",
+      "links": [
+        { "name": "Chrome", "url": "https://support.google.com/chrome/answer/95647" },
+        { "name": "Firefox", "url": "https://support.mozilla.org/en-US/kb/cookies" },
+        { "name": "Safari", "url": "https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac" },
+        { "name": "Edge", "url": "https://support.microsoft.com/en-us/edge" }
+      ]
+    },
+    "disclaimer": "Analytics data is processed by Cloudflare (CFA) as a processor, not by the publisher of this site."
+  },
+  "gdpr": {
+    "title": "GDPR Rights — Exercising Your Rights",
+    "lastUpdated": "2026-09-26",
+    "intro": {
+      "title": "Your rights over your personal data",
+      "text": "In accordance with the General Data Protection Regulation (GDPR — EU Regulation 2016/679) and the French Data Protection Act, you have the following rights over your personal data."
+    },
+    "rights": {
+      "title": "Your rights in detail",
+      "items": [
+        {
+          "article": "Art. 15",
+          "name": "Right of access",
+          "description": "Obtain confirmation that your data is being processed, and access to that data (copy, purposes, categories, recipients, retention period, origin)."
+        },
+        {
+          "article": "Art. 16",
+          "name": "Right to rectification",
+          "description": "Have inaccurate or incomplete data concerning you corrected."
+        },
+        {
+          "article": "Art. 17",
+          "name": "Right to erasure (\"right to be forgotten\")",
+          "description": "Request deletion of your data when no longer necessary, consent withdrawn, or processing is unlawful."
+        },
+        {
+          "article": "Art. 18",
+          "name": "Right to restriction",
+          "description": "Freeze the use of your data (e.g., during verification of rectification or objection)."
+        },
+        {
+          "article": "Art. 20",
+          "name": "Right to portability",
+          "description": "Receive your data in a structured, commonly used, machine-readable format, to transmit to another controller."
+        },
+        {
+          "article": "Art. 21",
+          "name": "Right to object",
+          "description": "Object at any time to processing on grounds relating to your particular situation (unless compelling legitimate grounds override)."
+        },
+        {
+          "article": "Art. 22",
+          "name": "Automated individual decisions",
+          "description": "Not be subject to a decision based solely on automated processing producing legal effects concerning you."
+        }
+      ]
+    },
+    "exercise": {
+      "title": "How to exercise your rights?",
+      "steps": [
+        "Identify the right(s) you wish to exercise",
+        "Contact Cloudflare's DPO: <a href=\"mailto:dpo@cloudflare.com\">dpo@cloudflare.com</a> (main processor)",
+        "Or use the CNIL form: <a href=\"https://www.cnil.fr/en/exercising-your-rights\" target=\"_blank\" rel=\"noreferrer\">cnil.fr/exercising-your-rights</a>",
+        "Attach ID if required (to verify your identity)",
+        "Specify the right(s) concerned and the processing (Cloudflare analytics)"
+      ],
+      "timeline": "The controller must respond within <strong>1 month</strong> (extendable by 2 months for complexity). If refused, written reasons required."
+    },
+    "verification": {
+      "title": "Identity verification",
+      "text": "To protect your data, ID proof may be requested (ID copy). It will be destroyed after verification."
+    },
+    "refusal": {
+      "title": "In case of refusal or no response",
+      "text": "You can lodge a complaint with the CNIL: <a href=\"https://www.cnil.fr/en/you-wish-lodge-complaint\" target=\"_blank\" rel=\"noreferrer\">cnil.fr/complaint</a> or seek judicial remedy."
+    },
+    "representative": {
+      "title": "Representative",
+      "text": "You may mandate a consumer association or lawyer to exercise your rights on your behalf."
+    },
+    "disclaimer": "Analytics data is processed by Cloudflare (CFA) as a processor, not by the publisher of this site."
+  }
+}

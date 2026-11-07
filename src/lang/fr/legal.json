@@ -1,0 +1,236 @@
+{
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "lastUpdated": "2026-09-26",
+    "controller": {
+      "title": "Responsable du traitement",
+      "text": "Ce site d'archive est géré par Aproise (développeur), agissant en tant que responsable du traitement des données personnelles collectées sur ce site. L'ancienne association RenaHeberg (RNA W212012750) a été dissoute en octobre 2020."
+    },
+    "dpo": {
+      "title": "Délégué à la protection des données (DPO)",
+      "text": "Vous pouvez contacter notre délégué à la protection des données via Cloudflare : <a href=\"https://www.cloudflare.com/cdn-cgi/l/email-protection#dpo\" target=\"_blank\" rel=\"noreferrer\">dpo@cloudflare.com</a>"
+    },
+    "purposes": {
+      "title": "Finalités et bases légales",
+      "items": [
+        { "purpose": "Mesure d'audience et analytics", "basis": "Consentement (Art. 6.1.a RGPD)", "details": "Via Cloudflare Web Analytics pour comprendre l'utilisation du site" },
+        { "purpose": "Gestion du consentement cookies", "basis": "Obligation légale (Art. 6.1.c RGPD)", "details": "Enregistrement de vos choix de consentement" }
+      ]
+    },
+    "dataCategories": {
+      "title": "Catégories de données collectées",
+      "items": [
+        "Adresse IP (anonymisée par Cloudflare)",
+        "Données de navigation (pages vues, durée, référent)",
+        "Préférences de langue et thème",
+        "Choix de consentement (accept/refuse, timestamp)"
+      ]
+    },
+    "recipients": {
+      "title": "Destinataires des données",
+      "text": "Cloudflare Inc. (sous-traitant, Art. 28 RGPD) pour l'hébergement et l'analytics. Vos données ne sont pas vendues ni partagées avec des tiers publicitaires."
+    },
+    "transfers": {
+      "title": "Transferts hors UE",
+      "text": "Cloudflare est certifié EU-U.S. Data Privacy Framework. Des garanties appropriées (clauses contractuelles types) encadrent les transferts vers les États-Unis."
+    },
+    "retention": {
+      "title": "Durée de conservation",
+      "items": [
+        "Analytics Cloudflare : 24 mois maximum (anonymisation IP)",
+        "Consentement cookies : 13 mois (conformité CNIL)",
+        "Logs de sécurité : 30 jours maximum"
+      ]
+    },
+    "rights": {
+      "title": "Vos droits (Art. 15-22 RGPD)",
+      "items": [
+        { "right": "Accès", "description": "Obtenir une copie de vos données" },
+        { "right": "Rectification", "description": "Corriger des données inexactes" },
+        { "right": "Effacement", "description": "Demander la suppression (« droit à l'oubli »)" },
+        { "right": "Limitation", "description": "Geler l'utilisation de vos données" },
+        { "right": "Portabilité", "description": "Récupérer vos données dans un format structuré" },
+        { "right": "Opposition", "description": "Vous opposer au traitement pour motifs légitimes" },
+        { "right": "Décisions automatisées", "description": "Ne pas faire l'objet de décisions purement automatisées" }
+      ],
+      "exercise": "Pour exercer vos droits : contactez Cloudflare (dpo@cloudflare.com) ou utilisez le formulaire de la CNIL."
+    },
+    "complaint": {
+      "title": "Réclamation auprès de la CNIL",
+      "text": "En cas de litige, vous pouvez saisir la CNIL : <a href=\"https://www.cnil.fr/fr/vous-souhaitez-deposer-une-plainte\" target=\"_blank\" rel=\"noreferrer\">cnil.fr/plainte</a>"
+    },
+    "disclaimer": "Les données d'analytics sont traitées par Cloudflare (CFA) en tant que sous-traitant, non par l'éditeur de ce site."
+  },
+  "legal": {
+    "title": "Mentions légales",
+    "lastUpdated": "2026-09-26",
+    "publisher": {
+      "title": "Éditeur du site",
+      "items": [
+        "Association RenaHeberg (dissoute en octobre 2020)",
+        "RNA : W212012750",
+        "Ancien hébergeur web associatif à but non lucratif (2018-2020)",
+        "Site d'archive uniquement — service non actif"
+      ]
+    },
+    "director": {
+      "title": "Directeur de la publication",
+      "text": "Aproise (développeur du site d'archive)"
+    },
+    "hosting": {
+      "title": "Hébergement",
+      "items": [
+        "Cloudflare Pages (Cloudflare Inc.)",
+        "101 Townsend St, San Francisco, CA 94107, USA",
+        "Site miroir : renaheberg.ape.pm (hébergement distinct)"
+      ]
+    },
+    "processor": {
+      "title": "Sous-traitant (Art. 28 RGPD)",
+      "text": "Cloudflare Inc. agit en tant que sous-traitant pour l'hébergement, la distribution (CDN) et l'analytics (Cloudflare Web Analytics). Un accord de traitement des données (DPA) est en place."
+    },
+    "ip": {
+      "title": "Propriété intellectuelle",
+      "text": "Le contenu de ce site d'archive est mis à disposition à des fins historiques et éducatives. Code source : <a href=\"https://git.renaheberg.fr\" target=\"_blank\" rel=\"noreferrer\">git.renaheberg.fr</a>."
+    },
+    "liability": {
+      "title": "Responsabilité",
+      "text": "Ce site est une archive historique. L'information fournie l'est « en l'état », sans garantie d'exactitude, de complétude ou d'actualité. L'éditeur ne saurait être tenu responsable de dommages directs ou indirects résultant de l'utilisation de ce site."
+    },
+    "law": {
+      "title": "Droit applicable et juridiction",
+      "text": "Ce site est régi par le droit français. Tout litige relève de la compétence des tribunaux français."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "Pour toute question relative à ce site d'archive : <a href=\"https://git.renaheberg.fr\" target=\"_blank\" rel=\"noreferrer\">git.renaheberg.fr</a>"
+    },
+    "disclaimer": "Les données d'analytics sont traitées par Cloudflare (CFA) en tant que sous-traitant, non par l'éditeur de ce site."
+  },
+  "cookies": {
+    "title": "Politique des cookies",
+    "lastUpdated": "2026-09-26",
+    "intro": {
+      "title": "Qu'est-ce qu'un cookie ?",
+      "text": "Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, smartphone, tablette) lors de la visite d'un site web. Il permet de reconnaître votre navigateur lors de visites ultérieures."
+    },
+    "categories": {
+      "title": "Catégories de cookies utilisés",
+      "items": [
+        {
+          "name": "Nécessaires (strictement nécessaires)",
+          "description": "Indispensables au fonctionnement du site (choix de langue, thème, consentement).",
+          "consent": "Aucun consentement requis (Art. 6.1.b RGPD)",
+          "cookies": [
+            { "name": "cookie_consent", "purpose": "Mémorise votre choix (accept/refuse)", "duration": "13 mois", "domain": ".renaheberg.fr" }
+          ]
+        },
+        {
+          "name": "Analytics (Cloudflare Web Analytics)",
+          "description": "Mesure d'audience anonyme pour améliorer le site.",
+          "consent": "Consentement requis (Art. 6.1.a RGPD)",
+          "cookies": [
+            { "name": "__cf_bm", "purpose": "Gestion du trafic bot (Cloudflare)", "duration": "30 min", "domain": ".cloudflare.com" },
+            { "name": "cf_clearance", "purpose": "Validation challenge Cloudflare", "duration": "1 an", "domain": ".cloudflare.com" }
+          ],
+          "note": "Ces cookies sont gérés par Cloudflare. L'IP est anonymisée. Aucune donnée nominative n'est collectée."
+        }
+      ]
+    },
+    "consent": {
+      "title": "Gestion de votre consentement",
+      "text": "Lors de votre première visite, une bannière vous demande d'accepter ou refuser les cookies analytics. Votre choix est mémorisé 13 mois via le cookie <code>cookie_consent</code>."
+    },
+    "withdraw": {
+      "title": "Retirer votre consentement",
+      "text": "Vous pouvez changer d'avis à tout moment en cliquant sur « Gérer les cookies » en bas de page, ou en supprimant le cookie <code>cookie_consent</code> de votre navigateur."
+    },
+    "refuseConsequence": {
+      "title": "Conséquences du refus",
+      "text": "Si vous refusez les cookies analytics : vous serez redirigé vers notre miroir <strong>renaheberg.ape.pm</strong> (même contenu, sans analytics Cloudflare). Vous pourrez y accepter les cookies pour revenir sur le site principal."
+    },
+    "browserSettings": {
+      "title": "Paramètres navigateur",
+      "text": "Vous pouvez aussi configurer votre navigateur pour bloquer/supprimer les cookies :",
+      "links": [
+        { "name": "Chrome", "url": "https://support.google.com/chrome/answer/95647" },
+        { "name": "Firefox", "url": "https://support.mozilla.org/fr/kb/cookies" },
+        { "name": "Safari", "url": "https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" },
+        { "name": "Edge", "url": "https://support.microsoft.com/fr-fr/edge" }
+      ]
+    },
+    "disclaimer": "Les données d'analytics sont traitées par Cloudflare (CFA) en tant que sous-traitant, non par l'éditeur de ce site."
+  },
+  "gdpr": {
+    "title": "Droits RGPD — Exercice de vos droits",
+    "lastUpdated": "2026-09-26",
+    "intro": {
+      "title": "Vos droits sur vos données personnelles",
+      "text": "Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi Informatique et Libertés, vous disposez des droits suivants sur vos données personnelles."
+    },
+    "rights": {
+      "title": "Détail de vos droits",
+      "items": [
+        {
+          "article": "Art. 15",
+          "name": "Droit d'accès",
+          "description": "Obtenir la confirmation que vos données sont traitées, et accéder à ces données (copie, finalités, catégories, destinataires, durée de conservation, origine)."
+        },
+        {
+          "article": "Art. 16",
+          "name": "Droit de rectification",
+          "description": "Faire corriger des données inexactes ou incomplètes vous concernant."
+        },
+        {
+          "article": "Art. 17",
+          "name": "Droit à l'effacement (« droit à l'oubli »)",
+          "description": "Demander la suppression de vos données quand elles ne sont plus nécessaires, que vous retirez votre consentement, ou en cas de traitement illicite."
+        },
+        {
+          "article": "Art. 18",
+          "name": "Droit à la limitation",
+          "description": "Geler l'utilisation de vos données (ex: pendant la vérification d'une rectification ou d'une opposition)."
+        },
+        {
+          "article": "Art. 20",
+          "name": "Droit à la portabilité",
+          "description": "Recevoir vos données dans un format structuré, couramment utilisé et lisible par machine, pour les transmettre à un autre responsable."
+        },
+        {
+          "article": "Art. 21",
+          "name": "Droit d'opposition",
+          "description": "Vous opposer à tout moment au traitement pour des motifs liés à votre situation particulière (sauf motifs légitimes impérieux)."
+        },
+        {
+          "article": "Art. 22",
+          "name": "Décisions individuelles automatisées",
+          "description": "Ne pas faire l'objet d'une décision fondée exclusivement sur un traitement automatisé produisant des effets juridiques vous concernant."
+        }
+      ]
+    },
+    "exercise": {
+      "title": "Comment exercer vos droits ?",
+      "steps": [
+        "Identifiez le droit(s) que vous souhaitez exercer",
+        "Contactez le DPO de Cloudflare : <a href=\"mailto:dpo@cloudflare.com\">dpo@cloudflare.com</a> (sous-traitant principal)",
+        "Ou utilisez le formulaire de la CNIL : <a href=\"https://www.cnil.fr/fr/exercer-vos-droits\" target=\"_blank\" rel=\"noreferrer\">cnil.fr/exercer-vos-droits</a>",
+        "Joignez une pièce d'identité si nécessaire (pour vérifier votre identité)",
+        "Précisez le(s) droit(s) concerné(s) et le traitement visé (analytics Cloudflare)"
+      ],
+      "timeline": "Le responsable doit répondre dans <strong>1 mois</strong> (prorogeable de 2 mois si complexité). En cas de refus, motif écrit obligatoire."
+    },
+    "verification": {
+      "title": "Vérification d'identité",
+      "text": "Pour protéger vos données, une preuve d'identité peut être demandée (copie carte d'identité). Elle sera détruite après vérification."
+    },
+    "refusal": {
+      "title": "En cas de refus ou absence de réponse",
+      "text": "Vous pouvez saisir la CNIL : <a href=\"https://www.cnil.fr/fr/vous-souhaitez-deposer-une-plainte\" target=\"_blank\" rel=\"noreferrer\">cnil.fr/plainte</a> ou engager une action judiciaire."
+    },
+    "representative": {
+      "title": "Mandataire",
+      "text": "Vous pouvez mandater une association de défense des consommateurs ou un avocat pour exercer vos droits à votre place."
+    },
+    "disclaimer": "Les données d'analytics sont traitées par Cloudflare (CFA) en tant que sous-traitant, non par l'éditeur de ce site."
+  }
+}

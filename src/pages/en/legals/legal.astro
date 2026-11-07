@@ -2,11 +2,11 @@
 import LegalLayout from '../../../layouts/LegalLayout.astro';
 import CookieConsent from '../../../components/CookieConsent.astro';
 import MirrorBanner from '../../../components/MirrorBanner.astro';
-import { getLegalContent } from '../../../utils/i18n';
+import { getLegalTranslations } from '../../../utils/i18n';
 
 const locale = 'en' as const;
-const page = 'legal';
-const t = await getLegalContent(locale, page);
+const page = 'legal' as const;
+const t = await getLegalTranslations(locale, page);
 const meta = {
   title: 'Legal Notice — RenaHeberg',
   description: 'RenaHeberg Legal Notice: publisher, hosting, processor, intellectual property, liability, applicable law.'

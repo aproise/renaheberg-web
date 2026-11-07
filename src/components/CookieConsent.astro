@@ -3,7 +3,7 @@ interface Props {
   locale: 'fr' | 'en';
 }
 const { locale } = Astro.props;
-const t = await import(`../content/${locale}.json`);
+const t = await import(`../lang/${locale}/index.json`);
 const cookie = t.default.cookie;
 ---
 <div id="cookie-banner" class="fixed bottom-6 left-6 z-50 hidden" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
