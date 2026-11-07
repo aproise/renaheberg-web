@@ -9,15 +9,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check"
   },
   "dependencies": {
-    "astro": "^7.3.4"
+    "astro": "^7.4.7"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.6",
-    "dotenv": "^18.0.3",
-    "tailwindcss": "^4.1.6"
+    "@astrojs/check": "^0.9.12",
+    "@tailwindcss/vite": "^4.3.5",
+    "dotenv": "^18.0.9",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^6.0.3"
   },
   "allowScripts": {
     "esbuild": true
