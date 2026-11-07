@@ -82,7 +82,7 @@
       "items": [
         "Cloudflare Pages (Cloudflare Inc.)",
         "101 Townsend St, San Francisco, CA 94107, USA",
-        "Site miroir : renaheberg.ape.pm (hébergement distinct)"
+        "Site miroir : renaheberg.pages.dev (hébergement distinct)"
       ]
     },
     "processor": {
@@ -147,7 +147,7 @@
     },
     "refuseConsequence": {
       "title": "Conséquences du refus",
-      "text": "Si vous refusez les cookies analytics : vous serez redirigé vers notre miroir <strong>renaheberg.ape.pm</strong> (même contenu, sans analytics Cloudflare). Vous pourrez y accepter les cookies pour revenir sur le site principal."
+      "text": "Si vous refusez les cookies analytics : vous serez redirigé vers notre miroir <strong>renaheberg.pages.dev</strong> (même contenu, sans analytics Cloudflare). Vous pourrez y accepter les cookies pour revenir sur le site principal."
     },
     "browserSettings": {
       "title": "Paramètres navigateur",

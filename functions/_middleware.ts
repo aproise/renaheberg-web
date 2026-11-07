@@ -69,7 +69,12 @@ export async function onRequest(context: { request: Request; next: () => Promise
     });
   }
   
-  // 4. Everything else → redirect to canonical
+  // 4. Old mirror (ape.pm) → redirect to new mirror (pages.dev)
+  if (host === 'renaheberg.ape.pm') {
+    return Response.redirect('https://renaheberg.pages.dev' + url.pathname + url.search, 301);
+  }
+
+  // 5. Everything else → redirect to canonical
   return Response.redirect(env.PUBLIC_SITE_URL + url.pathname + url.search, 301);
 }
 
