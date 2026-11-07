@@ -2,11 +2,11 @@
 import LegalLayout from '../../../layouts/LegalLayout.astro';
 import CookieConsent from '../../../components/CookieConsent.astro';
 import MirrorBanner from '../../../components/MirrorBanner.astro';
-import { getLegalContent } from '../../../utils/i18n';
+import { getLegalTranslations } from '../../../utils/i18n';
 
 const locale = 'en' as const;
-const page = 'privacy';
-const t = await getLegalContent(locale, page);
+const page = 'privacy' as const;
+const t = await getLegalTranslations(locale, page);
 const meta = {
   title: 'Privacy Policy — RenaHeberg',
   description: 'RenaHeberg Privacy Policy: data processing, cookies, GDPR rights, DPO contact.'

@@ -38,8 +38,8 @@
     "copyright": "2018–2020 © RenaHeberg",
     "author": "Site coded with love by {link}"
   },
-  "ui": { 
-    "theme": "Theme", 
+  "ui": {
+    "theme": "Theme",
     "language": "Language",
     "themeLight": "Light",
     "themeDark": "Dark",

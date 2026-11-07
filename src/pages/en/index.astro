@@ -10,13 +10,12 @@ import LangSwitcher from '../../components/LangSwitcher.astro';
 import { getTranslations } from '../../utils/i18n';
 
 const locale = 'en' as const;
-const t = getTranslations(locale);
+const t = await getTranslations(locale);
 ---
 <Layout
   locale={locale}
   title={t.meta.title}
   description={t.meta.description}
-  translations={t}
 >
   <main>
     <Hero t={t.hero} />

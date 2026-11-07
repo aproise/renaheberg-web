@@ -1,18 +1,16 @@
-import fr from '../content/fr.json';
-import en from '../content/en.json';
+import type { Translations, LegalTranslations, Locale } from './types';
 
-export type Locale = 'fr' | 'en';
-export type Translations = typeof fr;
-export type LegalContent = {
-  title: string;
-  lastUpdated: string;
-  [key: string]: any;
-};
+export async function getTranslations(locale: Locale): Promise<Translations> {
+  const module = await import(`../lang/${locale}/index.json`);
+  return module.default as Translations;
+}
 
-export const translations: Record<Locale, Translations> = { fr, en };
-
-export function getTranslations(locale: Locale): Translations {
-  return translations[locale] || translations.fr;
+export async function getLegalTranslations(
+  locale: Locale,
+  page: 'privacy' | 'legal' | 'cookies' | 'rgpd' | 'gdpr',
+): Promise<LegalTranslations> {
+  const module = await import(`../lang/${locale}/legal.json`);
+  return module.default[page] as LegalTranslations;
 }
 
 export function detectLocale(acceptLanguage: string): Locale {
@@ -27,9 +25,4 @@ export function getAlternateUrls(pathname: string, site: string | URL): { hrefla
     { hreflang: 'en', href: `${base}/en${pathname}` },
     { hreflang: 'x-default', href: `${base}/` },
   ];
-}
-
-export async function getLegalContent(locale: Locale, page: string): Promise<LegalContent> {
-  const module = await import(`../content/legal/${locale}/${page}.json`);
-  return module.default;
 }

@@ -2,13 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import { getTranslations } from '../utils/i18n';
 
-const t = getTranslations('fr');
+const t = await getTranslations('fr');
 ---
 <Layout
   locale="fr"
   title={t.meta.title}
   description={t.meta.description}
-  translations={t}
 >
   <script type="module">
     import '../scripts/locale-redirect.js';

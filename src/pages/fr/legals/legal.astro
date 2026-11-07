@@ -2,11 +2,11 @@
 import LegalLayout from '../../../layouts/LegalLayout.astro';
 import CookieConsent from '../../../components/CookieConsent.astro';
 import MirrorBanner from '../../../components/MirrorBanner.astro';
-import { getLegalContent } from '../../../utils/i18n';
+import { getLegalTranslations } from '../../../utils/i18n';
 
 const locale = 'fr' as const;
-const page = 'legal';
-const t = await getLegalContent(locale, page);
+const page = 'legal' as const;
+const t = await getLegalTranslations(locale, page);
 const meta = {
   title: 'Mentions légales — RenaHeberg',
   description: 'Mentions légales de RenaHeberg : éditeur, hébergement, sous-traitant, propriété intellectuelle, responsabilité, droit applicable.'

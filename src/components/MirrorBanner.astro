@@ -3,7 +3,7 @@ interface Props {
   locale: 'fr' | 'en';
 }
 const { locale } = Astro.props;
-const t = await import(`../content/${locale}.json`);
+const t = await import(`../lang/${locale}/index.json`);
 const mirror = t.default.cookie.mirrorBanner;
 ---
 <div id="mirror-banner" class="fixed top-0 left-0 right-0 z-40 bg-amber-100 dark:bg-amber-900 border-b border-amber-300 dark:border-amber-700 hidden" role="banner" aria-live="polite">

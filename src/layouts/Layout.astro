@@ -8,22 +8,8 @@ interface Props {
   locale: 'fr' | 'en';
   title: string;
   description: string;
-  translations: {
-    hero: { eyebrow: string; brand: string; rna: string; claim: string; scrollCta: string; scrollAria: string };
-    intro: { title: string; text: string; factsHeading: string; period: string; facts: { value: string; label: string }[]; status: string };
-    services: { eyebrow: string; title: string; items: { icon: string; title: string; text: string }[] };
-    archive: { eyebrow: string; title: string; text: string };
-    footer: { copyright: string; author: string };
-    ui: { theme: string; language: string; themeLight: string; themeDark: string };
-    meta: { title: string; description: string };
-    cookie: {
-      banner: { text: string; accept: string; refuse: string; learnMore: string };
-      links: { privacy: string; cookies: string };
-      mirrorBanner: { text: string; button: string };
-    };
-  };
 }
-const { locale, title, description, translations } = Astro.props;
+const { locale, title, description } = Astro.props;
 const site = Astro.site ?? 'https://renaheberg.fr';
 const canonicalURL = `${site}${locale}/`;
 const seoImage = `${site}images/seo/${locale}.png`;
