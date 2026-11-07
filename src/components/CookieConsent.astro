@@ -74,7 +74,7 @@ const cookie = t.default.cookie;
     const isSecure = location.protocol === 'https:';
 
     const isMainDomain = hostname === 'renaheberg.fr' || isLocalhost;
-    const isMirrorDomain = hostname === 'renaheberg.ape.pm';
+    const isMirrorDomain = hostname === 'renaheberg.pages.dev';
 
     function getCookie(name: string) {
       const value = `; ${document.cookie}`;
@@ -106,7 +106,7 @@ const cookie = t.default.cookie;
     }
 
     function redirectToMirror() {
-      const url = new URL('https://renaheberg.ape.pm');
+      const url = new URL('https://renaheberg.pages.dev');
       url.pathname = window.location.pathname;
       url.search = window.location.search;
       window.location.href = url.toString();
