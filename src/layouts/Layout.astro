@@ -14,7 +14,7 @@ interface Props {
     services: { eyebrow: string; title: string; items: { icon: string; title: string; text: string }[] };
     archive: { eyebrow: string; title: string; text: string };
     footer: { copyright: string; author: string };
-    ui: { theme: string; language: string; themeSystem: string; themeLight: string; themeDark: string };
+    ui: { theme: string; language: string; themeLight: string; themeDark: string };
     meta: { title: string; description: string };
     cookie: {
       banner: { text: string; accept: string; refuse: string; learnMore: string };
@@ -24,8 +24,9 @@ interface Props {
   };
 }
 const { locale, title, description, translations } = Astro.props;
-const canonicalURL = `${Astro.site}${locale}/`;
-const seoImage = `${Astro.site}images/seo/${locale}.png`;
+const site = Astro.site ?? 'https://renaheberg.fr';
+const canonicalURL = `${site}${locale}/`;
+const seoImage = `${site}images/seo/${locale}.png`;
 ---
 <!DOCTYPE html>
 <html lang={locale}>
@@ -34,7 +35,7 @@ const seoImage = `${Astro.site}images/seo/${locale}.png`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalURL} />
-    {getAlternateUrls('/', Astro.site).map((alt) => (
+    {getAlternateUrls('/', site).map((alt) => (
       <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
     ))}
 
@@ -88,8 +89,8 @@ const seoImage = `${Astro.site}images/seo/${locale}.png`;
     </script>
   </head>
   <body class="min-h-screen flex flex-col">
-    <MirrorBanner locale={locale} translations={translations} />
+    <MirrorBanner locale={locale} />
     <slot />
-    <CookieConsent locale={locale} translations={translations} />
+    <CookieConsent locale={locale} />
   </body>
 </html>

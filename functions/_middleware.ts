@@ -3,6 +3,9 @@ interface Env {
   ALLOWED_HOSTS?: string;
 }
 
+// HTMLRewriter is a Cloudflare Workers API, not available in Node type-checking
+declare const HTMLRewriter: new () => any;
+
 export async function onRequest(context: { request: Request; next: () => Promise<Response>; env: Env }): Promise<Response> {
   const { request, next, env } = context;
   const url = new URL(request.url);
@@ -72,7 +75,7 @@ export async function onRequest(context: { request: Request; next: () => Promise
 
 class HeadHandler {
   element(element: Element): void {
-    element.append(`<meta name="robots" content="noindex, nofollow">`, { html: true });
+    element.append(`<meta name="robots" content="noindex, nofollow">`, { html: true } as any);
   }
 }
 

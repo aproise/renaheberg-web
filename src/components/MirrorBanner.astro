@@ -34,7 +34,7 @@ const mirror = t.default.cookie.mirrorBanner;
 
     if (isMirrorDomain) {
       banner.classList.remove('hidden');
-      link.href = `https://renaheberg.fr${window.location.pathname}${window.location.search}`;
+      (link as HTMLAnchorElement).href = `https://renaheberg.fr${window.location.pathname}${window.location.search}`;
     }
   })();
 </script>

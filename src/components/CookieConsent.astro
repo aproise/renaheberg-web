@@ -76,19 +76,20 @@ const cookie = t.default.cookie;
     const isMainDomain = hostname === 'renaheberg.fr' || isLocalhost;
     const isMirrorDomain = hostname === 'renaheberg.ape.pm';
 
-    function getCookie(name) {
+    function getCookie(name: string) {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(';').shift();
+      if (parts.length === 2) return parts.pop()?.split(';').shift() ?? null;
       return null;
     }
 
-    function setCookie(name, value, maxAge) {
+    function setCookie(name: string, value: string, maxAge: number) {
       const secureFlag = isSecure ? '; Secure' : '';
       document.cookie = `${name}=${value}; max-age=${maxAge}; path=/; domain=${COOKIE_DOMAIN}; SameSite=Lax${secureFlag}`;
     }
 
     function hideBanner() {
+      if (!banner || !backdrop) return;
       banner.classList.add('hidden');
       backdrop.classList.add('hidden');
       banner.setAttribute('aria-hidden', 'true');
@@ -96,11 +97,12 @@ const cookie = t.default.cookie;
     }
 
     function showBanner() {
+      if (!banner || !backdrop || !refuseBtn) return;
       banner.classList.remove('hidden');
       backdrop.classList.remove('hidden');
       banner.removeAttribute('aria-hidden');
       backdrop.removeAttribute('aria-hidden');
-      setTimeout(() => refuseBtn?.focus(), 100);
+      setTimeout(() => refuseBtn.focus(), 100);
     }
 
     function redirectToMirror() {
@@ -165,10 +167,10 @@ const cookie = t.default.cookie;
       
       if (e.shiftKey && document.activeElement === firstElement) {
         e.preventDefault();
-        lastElement.focus();
+        (lastElement as HTMLElement).focus();
       } else if (!e.shiftKey && document.activeElement === lastElement) {
         e.preventDefault();
-        firstElement.focus();
+        (firstElement as HTMLElement).focus();
       }
     });
   })();

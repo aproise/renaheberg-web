@@ -14,6 +14,19 @@ export default defineConfig({
   trailingSlash: 'never',
   output: 'static',
   build: { inlineStylesheets: 'auto' },
+  security: {
+    csp: {
+      policy: {
+        'default-src': ["'self'"],
+        'base-uri': ["'self'"],
+        'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.bunny.net'],
+        'font-src': ["'self'", 'https://fonts.bunny.net'],
+        'img-src': ["'self'", 'data:'],
+        'script-src': ["'self'", "'unsafe-inline'"],
+        'connect-src': ["'self'"],
+      },
+    },
+  },
   env: {
     schema: {
       PUBLIC_SITE_URL: envField.string({ context: 'client', access: 'public', optional: false }),

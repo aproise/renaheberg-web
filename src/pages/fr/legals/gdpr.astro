@@ -12,8 +12,8 @@ const meta = {
   description: 'Exercer vos droits RGPD : accès, rectification, effacement, portabilité, opposition, limitation. Contact DPO, délais, réclamation CNIL.'
 };
 ---
-<LegalLayout locale={locale} title={meta.title} description={meta.description} translations={import('../../../content/fr.json').then(m => m.default)}>
-  <MirrorBanner locale={locale} translations={import('../../../content/fr.json').then(m => m.default)} />
+<LegalLayout locale={locale} title={meta.title} description={meta.description}>
+  <MirrorBanner locale={locale} />
   <main class="flex-1">
     <section class="container-custom mx-auto px-4 py-16">
       <header class="mb-12 text-center">
@@ -90,5 +90,5 @@ const meta = {
       </div>
     </section>
   </main>
-  <CookieConsent locale={locale} translations={import('../../../content/fr.json').then(m => m.default)} />
+  <CookieConsent locale={locale} />
 </LegalLayout>
