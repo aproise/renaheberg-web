@@ -6,13 +6,10 @@ interface Props {
   locale: 'fr' | 'en';
   title: string;
   description: string;
-  translations: {
-    ui: { theme: string; language: string; themeSystem: string; themeLight: string; themeDark: string };
-    meta: { title: string; description: string };
-  };
 }
-const { locale, title, description, translations } = Astro.props;
-const canonicalURL = `${Astro.site}${locale}/`;
+const { locale, title, description } = Astro.props;
+const site = Astro.site ?? 'https://renaheberg.fr';
+const canonicalURL = `${site}${locale}/`;
 ---
 <!DOCTYPE html>
 <html lang={locale}>
@@ -21,7 +18,7 @@ const canonicalURL = `${Astro.site}${locale}/`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalURL} />
-    {getAlternateUrls('/').map((alt) => (
+    {getAlternateUrls('/', site).map((alt) => (
       <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
     ))}
 
